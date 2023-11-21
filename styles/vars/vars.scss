@@ -1,0 +1,64 @@
+@use "sass:math";
+
+$site-width: 100%;
+$site-height: 100vh;
+$site-maket-width: 1440px;
+$site-maket-height: 4160px;
+
+$header-width: 100%;
+$header-height: 132px;
+
+$footer-width: 100%;
+$footer-height: 380px;
+
+$section-width: 100%;
+$section-height: 704px;
+$section-info-height: 355px;
+
+$block-maket-width: 1280px;
+$block-height: 584px;
+$block-width: math.div($block-maket-width, $site-maket-width) * $site-width;
+
+$item-maket-width: 305px;
+$item-double-maket-width: 630px;
+$item-height: 462px;
+$item-width: math.div($item-maket-width, $site-maket-width) * $site-width;
+$item-double-width: math.div($item-double-maket-width, $site-maket-width) *
+  $site-width;
+
+$input-height: 56px;
+$button-height: 56px;
+$button-confirm-maket-width: 108px; //143px;
+$button-confirm-width: math.div($button-confirm-maket-width, $site-maket-width) *
+  $site-width;
+
+$color-primary: #4e4d93; //rgb(78,77,147)
+$color-primary-dark: #2a254b; //rgb(42,37,75)
+$color-white: #fff; //rgb(255,255,255)
+$color-black: #000; //rgb(0,0,0)
+$color-grey: #726e8d; //rgb(114,110,141)
+$color-grey-dark: #22202e; //rgb(34,32,46)
+$color-grey-light: #ebe8f4; //rgb(235,232,244)
+
+@font-face {
+  font-family: Roboto;
+  src: url(../../assets/font/Roboto.ttf);
+}
+
+@mixin flex-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+@mixin flex-horizontal {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+@mixin text-font($font-size, $font-weight, $line-height, $letter-spacing) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
