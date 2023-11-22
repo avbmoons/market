@@ -48,26 +48,86 @@ body {
             height: 100%;
             @include flex-horizontal();
             justify-content: flex-start;
-            &__link {
+            .menu {
               margin-left: 20px;
               @include flex-vertical();
-              text-align: right;
-              text-decoration: none;
-              @include text-font(14px, 400, 14px, 0%);
-              color: $color-grey-dark;
-              cursor: pointer;
+              position: relative;
+              &__burger {
+                @include flex-vertical();
+                text-align: right;
+                text-decoration: none;
+                @include text-font(14px, 400, 14px, 0%);
+                color: $color-grey-dark;
+                cursor: pointer;
+              }
+              &__content {
+                margin: 0;
+                margin-top: 5px;
+                width: 200px;
+                position: absolute;
+                left: -5px;
+                top: 20px;
+                @include flex-vertical();
+                display: none;
+                border: none;
+                &__link {
+                  margin-top: 10px;
+                  text-decoration: none;
+                  text-align: left;
+                  @include text-font(14px, 300, 14px, 0%);
+                  color: $color-primary-dark;
+                }
+                .last {
+                  margin-bottom: 20px;
+                }
+                &__link:hover {
+                  font-weight: 400;
+                  color: $color-grey;
+                }
+              }
+              &__burger:hover &__content {
+                display: block;
+              }
             }
-            &__input {
+            .menu:hover .menu__content {
+              @include flex-vertical();
+              display: inline-flex;
+            }
+            .search-box {
               margin-left: 20px;
-              padding-left: 10px;
-              width: 70%;
-              outline: $color-grey-light;
-              display: none;
+              width: 80%;
+              @include flex-horizontal();
+              justify-content: space-between;
+              position: relative;
+              &__link {
+                @include flex-vertical();
+                text-align: right;
+                text-decoration: none;
+                @include text-font(14px, 400, 14px, 0%);
+                color: $color-grey-dark;
+                cursor: pointer;
+              }
+              &__input {
+                margin: 0 auto;
+                margin-left: 20px;
+                padding-left: 10px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 90%;
+                height: 100%;
+                outline: $color-grey-light;
+                display: none;
+              }
+              &__input:focus {
+                border: 1px solid $color-grey;
+                background-color: $color-grey-light;
+                outline: $color-grey;
+                display: block;
+              }
             }
-            &__input:focus {
-              border: 1px solid $color-grey;
-              background-color: $color-grey-light;
-              outline: $color-grey;
+            .search-box:hover .search-box__input {
+              display: inline-flex;
             }
           }
           &__logo {

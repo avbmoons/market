@@ -1,4 +1,187 @@
+@font-face {
+  font-family: Roboto;
+  src: url(../../assets/font/Roboto.ttf);
+}
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: Roboto;
+}
+
+footer {
+  margin: 0 auto;
+  width: 100%;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #2a254b;
+}
+footer .footer-block {
+  margin: 0 auto;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid #726e8d;
+}
+footer .footer-block__box {
+  margin: 0 auto;
+  width: 88.8888888889%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+footer .footer-block__box .menu {
+  margin: 0 auto;
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+footer .footer-block__box .menu__heading {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 16px;
+  letter-spacing: 5%;
+  color: #fff;
+}
+footer .footer-block__box .menu__link {
+  margin-top: 10px;
+  text-align: left;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 14px;
+  letter-spacing: 0%;
+  color: #fff;
+}
+footer .footer-block__box .subscribe {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+footer .footer-block__box .subscribe__heading {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 16px;
+  letter-spacing: 5%;
+  color: #fff;
+}
+footer .footer-block__box .subscribe__input-box {
+  margin-top: 10px;
+  width: 100%;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+footer .footer-block__box .subscribe__input-box__input {
+  width: 80%;
+  padding-left: 10px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 16px;
+  letter-spacing: 5%;
+  color: #ebe8f4;
+  background-color: #4e4d93;
+  border: #2a254b;
+}
+footer .footer-block__box .subscribe__input-box__input:focus {
+  border: none;
+  outline: #2a254b;
+  color: #2a254b;
+  background-color: #ebe8f4;
+}
+footer .footer-block__box .subscribe__input-box__button {
+  width: 20%;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 16px;
+  letter-spacing: 5%;
+  color: #2a254b;
+  background-color: #fff;
+  border: 1px solid #2a254b;
+  cursor: pointer;
+}
+footer .footer-block__box .subscribe__input-box__button:hover {
+  background-color: #d9d9d9;
+}
+footer .footer-block__box .subscribe__input-box__button:focus {
+  background-color: #d9d9d9;
+}
+footer .footer-bottom {
+  margin: 0 auto;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+footer .footer-bottom__box {
+  margin: 0 auto;
+  width: 88.8888888889%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+footer .footer-bottom__box__copyrights {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+footer .footer-bottom__box__copyrights__text {
+  margin: 0 auto;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 14px;
+  letter-spacing: 0%;
+  color: #fff;
+}
+footer .footer-bottom__box__socials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+footer .footer-bottom__box__socials .socials-box {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+footer .footer-bottom__box__socials .socials-box__link {
+  margin: 0 auto;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+footer .footer-bottom__box__socials .socials-box__link img {
+  margin: 0 auto;
+}
+footer .footer-bottom__box__socials .socials-box__link img:hover {
+  background-color: #726e8d;
+}
+footer .footer-bottom__box__socials .socials-box__link:active {
+  background-color: #726e8d;
 }/*# sourceMappingURL=footer.css.map */

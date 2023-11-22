@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>modal</title>
+    <link rel="stylesheet" href="../styles/modal/modal.css" />
+    <script defer src="../scripts/modal.js"></script>
+  </head>
+  <body>
+    <div class="item-box">
+      <img
+        class="item-box__image"
+        src="../assets/catalog/item-1.png"
+        alt="photo"
+      />
+      <a class="item-box__heading" href="#">The Dandy chair</a>
+      <p class="item-box__price">2500&nbsp;&#8381;</p>
+    </div>
+    <button onclick="openModal();">Open</button>
+    <a href="#" onclick="openModal();">also Open</a>
+    <div class="modal">
+      <div class="modal__content">
+        <p>здесь содержаните модалки...</p>
+        <span onclick="closeModal();">&times;</span>
+      </div>
+    </div>
+  </body>
+</html>
