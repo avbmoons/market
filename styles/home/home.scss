@@ -17,7 +17,6 @@ body {
   min-height: $site-height;
   @include flex-vertical();
   justify-content: space-between;
-  border: 1px solid red;
   .top {
     margin: 0 auto;
     width: $site-width;
@@ -27,26 +26,570 @@ body {
     flex-grow: 1;
     header {
       margin: 0 auto;
-      width: $site-width;
+      width: 100%;
       height: $header-height;
       @include flex-vertical();
-      border: 1px solid green;
+      justify-content: space-between;
       background-color: $color-white;
+      .header-block {
+        margin: 0 auto;
+        width: 100%;
+        height: 50%;
+        @include flex-vertical();
+        border-bottom: 1px solid $color-grey-light;
+        &__box {
+          margin: 0 auto;
+          width: 100%;
+          height: 40%;
+          @include flex-horizontal();
+          &__search {
+            margin: 0 auto;
+            width: 40%;
+            height: 100%;
+            @include flex-horizontal();
+            justify-content: flex-start;
+            &__link {
+              margin-left: 20px;
+              @include flex-vertical();
+              text-align: right;
+              text-decoration: none;
+              @include text-font(14px, 400, 14px, 0%);
+              color: $color-grey-dark;
+              cursor: pointer;
+            }
+            &__input {
+              margin-left: 20px;
+              padding-left: 10px;
+              width: 70%;
+              outline: $color-grey-light;
+              display: none;
+            }
+            &__input:focus {
+              border: 1px solid $color-grey;
+              background-color: $color-grey-light;
+              outline: $color-grey;
+            }
+          }
+          &__logo {
+            margin: 0 auto;
+            width: 20%;
+            height: 100%;
+            @include flex-vertical();
+            cursor: pointer;
+            &__image {
+              margin: 0 auto;
+              height: auto;
+            }
+          }
+          &__services {
+            margin: auto;
+            width: 40%;
+            height: 100%;
+            @include flex-horizontal();
+            justify-content: flex-end;
+            &__link {
+              margin-right: 20px;
+              @include flex-vertical();
+              text-align: right;
+              text-decoration: none;
+              @include text-font(14px, 400, 14px, 0%);
+              color: $color-grey-dark;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      nav {
+        margin: 0 auto;
+        width: 100%;
+        height: 48%; // 50%;
+        @include flex-vertical();
+        .categories {
+          margin: 0 auto;
+          width: 100%;
+          height: 30%;
+          @include flex-horizontal();
+          &__link {
+            margin-left: 20px;
+            @include flex-vertical();
+            text-decoration: none;
+            text-align: center;
+            @include text-font(16px, 300, 16px, 0%);
+            color: $color-grey-dark;
+            cursor: pointer;
+          }
+          &__link:hover {
+            color: $color-grey;
+            font-weight: 400;
+          }
+          .first {
+            margin-left: 0;
+          }
+        }
+      }
     }
     main {
       margin: 0 auto;
       width: $site-width;
       min-height: $section-height;
       @include flex-vertical();
-      border: 1px solid violet;
+      justify-content: flex-start;
       background-color: $color-white;
+      .hero {
+        margin: 0 auto;
+        margin-top: 40px;
+        width: $block-width;
+        //min-height: $block-height * $coeff;
+        min-height: $block-height;
+        @include flex-horizontal();
+        justify-content: space-between;
+        background-color: $color-grey-dark;
+        &__block {
+          min-width: 60%;
+          @include flex-vertical();
+          &__heading {
+            margin: 0 auto;
+            margin-top: 10px;
+            width: 100%;
+            height: 50%;
+            @include flex-vertical();
+            &__content {
+              margin: 0;
+              margin-left: 40px;
+              margin-bottom: 20px;
+              width: 60%;
+              @include text-font(22px, 300, 30px, 0%);
+              color: $color-white;
+            }
+            &__button {
+              margin: 0;
+              margin-top: 20px;
+              margin-left: 40px;
+              width: 30%;
+              height: $input-height;
+              @include text-font(16px, 300, 16px, 0%);
+              color: $color-white;
+              background-color: $color-primary;
+              border: none;
+              cursor: pointer;
+            }
+            &__button:hover {
+              background-color: $color-grey-middle;
+              color: $color-primary-dark;
+            }
+            &__button:focus {
+              background-color: $color-grey-middle;
+              color: $color-primary-dark;
+            }
+          }
+          &__text {
+            margin: 0 auto;
+            width: 100%;
+            height: 50%;
+            @include flex-vertical();
+            &__content {
+              margin: 0;
+              margin-left: 40px;
+              width: 60%;
+              @include text-font(16px, 300, 24px, 0%);
+              color: $color-white;
+            }
+          }
+        }
+        &__slide {
+          max-width: 40%;
+          height: $block-height;
+          @include flex-horizontal();
+          justify-content: flex-end;
+          img {
+            margin: 0 auto;
+            height: 100%;
+          }
+        }
+      }
+      .features {
+        margin: 0 auto;
+        margin-top: 40px;
+        width: $block-width;
+        min-height: $section-info-height;
+        @include flex-horizontal();
+        justify-content: space-between;
+        &__block {
+          width: 100%;
+          @include flex-vertical();
+          &__heading {
+            margin: 0 auto;
+            width: 100%;
+            height: 35%;
+            @include flex-vertical();
+            &__content {
+              margin: 0 auto;
+              //margin-left: 40px;
+              //margin-bottom: 20px;
+              width: 100%; // 60%;
+              @include text-font(18px, 400, 18px, 0%);
+              color: $color-primary-dark;
+              text-align: center;
+            }
+          }
+          &__items {
+            margin: 0 auto;
+            width: 100%;
+            height: 65%;
+            @include flex-horizontal();
+            justify-content: space-between;
+            .feature-box {
+              width: 23%;
+              height: 100%;
+              @include flex-vertical();
+              justify-content: flex-start;
+              &__image {
+                width: fit-content;
+              }
+              &__heading {
+                margin-top: 20px;
+                @include text-font(16px, 400, 16px, 0%);
+                color: $color-primary-dark;
+              }
+              &__content {
+                margin-top: 20px;
+                @include text-font(14px, 400, 22px, 0%);
+                color: $color-primary-dark;
+              }
+            }
+          }
+        }
+      }
+      .arrivals {
+        margin: 0 auto;
+        margin-top: 40px;
+        width: $block-width;
+        min-height: $section-height * $coeff;
+        @include flex-horizontal();
+        justify-content: space-between;
+        &__block {
+          width: 100%;
+          height: fit-content;
+          @include flex-vertical();
+          &__heading {
+            margin: 0 auto;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            width: 100%;
+            height: fit-content;
+            @include flex-vertical();
+            justify-content: flex-start;
+            &__content {
+              margin: 0 auto;
+              width: 100%;
+              @include text-font(18px, 400, 18px, 0%);
+              color: $color-primary-dark;
+              text-align: left;
+            }
+          }
+          &__items {
+            margin: 0 auto;
+            margin-bottom: 40px;
+            width: 100%;
+            height: fit-content;
+            @include flex-horizontal();
+            justify-content: space-between;
+            .item-box {
+              margin-left: 10px;
+              min-width: 23%;
+              height: fit-content;
+              @include flex-vertical();
+              justify-content: flex-start;
+              &__image {
+                width: 100%;
+                height: auto;
+              }
+              &__heading {
+                margin-top: 10px;
+                text-decoration: none;
+                text-align: left;
+                @include text-font(16px, 400, 16px, 0%);
+                color: $color-primary-dark;
+              }
+              &__price {
+                margin-top: 20px;
+                @include text-font(16px, 400, 24px, 0%);
+                color: $color-primary-dark;
+              }
+              &__heading:hover {
+                color: $color-grey;
+                font-weight: 400;
+              }
+            }
+            .first {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+      .popular {
+        margin: 0 auto;
+        margin-top: 40px;
+        width: $block-width;
+        min-height: $section-height * $coeff;
+        @include flex-horizontal();
+        justify-content: space-between;
+        &__block {
+          width: 100%;
+          height: fit-content;
+          @include flex-vertical();
+          &__heading {
+            margin: 0 auto;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            width: 100%;
+            height: fit-content;
+            @include flex-vertical();
+            justify-content: flex-start;
+            &__content {
+              margin: 0 auto;
+              width: 100%;
+              @include text-font(18px, 400, 18px, 0%);
+              color: $color-primary-dark;
+              text-align: left;
+            }
+          }
+          &__items {
+            margin: 0 auto;
+            margin-bottom: 40px;
+            width: 100%;
+            height: fit-content;
+            @include flex-horizontal();
+            justify-content: space-between;
+            .item-box {
+              margin-left: 10px;
+              min-width: 23%;
+              height: fit-content;
+              @include flex-vertical();
+              justify-content: flex-start;
+              &__image {
+                width: 100%;
+                height: auto;
+              }
+              &__heading {
+                margin-top: 10px;
+                text-decoration: none;
+                text-align: left;
+                @include text-font(16px, 400, 16px, 0%);
+                color: $color-primary-dark;
+              }
+              &__price {
+                margin-top: 20px;
+                @include text-font(16px, 400, 24px, 0%);
+                color: $color-primary-dark;
+              }
+              &__heading:hover {
+                color: $color-grey;
+                font-weight: 400;
+              }
+            }
+            .first {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+      .feedback {
+        margin: 0 auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width: $block-width;
+        min-height: $block-height * $coeff;
+        @include flex-vertical();
+        &__heading {
+          margin: 0 auto;
+          width: 100%;
+          height: fit-content;
+          @include text-font(26px, 400, 26px, 0%);
+          color: $color-primary-dark;
+          text-align: center;
+        }
+        &__content {
+          margin: 0 auto;
+          margin-top: 20px;
+          width: 50%;
+          height: fit-content;
+          @include text-font(16px, 400, 16px, 0%);
+          color: $color-primary-dark;
+          text-align: center;
+        }
+        &__form {
+          margin: 0 auto;
+          margin-top: 20px;
+          width: 50%;
+          height: fit-content;
+          .subscribe {
+            margin-bottom: 20px;
+            width: 100%;
+            height: 100%;
+            @include flex-vertical();
+            justify-content: flex-start;
+            &__input-box {
+              margin-top: 10px;
+              width: 100%;
+              height: $input-height;
+              @include flex-horizontal();
+              &__input {
+                width: 80%;
+                padding-left: 10px;
+                @include text-font(16px, 300, 16px, 5%);
+                color: $color-grey-light;
+                background-color: $color-white;
+                border: 1px solid $color-grey-light;
+              }
+              &__input:focus {
+                border: none;
+                outline: $color-primary-dark;
+                color: $color-primary-dark;
+                background-color: $color-grey-middle;
+              }
+              &__button {
+                width: 20%;
+                @include text-font(16px, 300, 16px, 5%);
+                color: $color-white;
+                background-color: $color-primary-dark;
+                border: 1px solid $color-primary-dark;
+                cursor: pointer;
+              }
+              &__button:hover {
+                background-color: $color-grey-middle;
+              }
+              &__button:focus {
+                background-color: $color-grey-middle;
+              }
+            }
+          }
+        }
+      }
     }
   }
   footer {
     margin: 0 auto;
-    width: $site-width;
+    width: 100%;
     height: $footer-height;
     @include flex-vertical();
     background-color: $color-primary-dark;
+    .footer-block {
+      margin: 0 auto;
+      width: 100%;
+      height: 80%;
+      @include flex-vertical();
+      border-bottom: 1px solid $color-grey;
+      &__box {
+        margin: 0 auto;
+        width: $block-width;
+        height: 70%;
+        @include flex-horizontal();
+        .menu {
+          margin: 0 auto;
+          width: 20%;
+          height: 100%;
+          @include flex-vertical();
+          justify-content: flex-start;
+          &__heading {
+            @include text-font(16px, 300, 16px, 5%);
+            color: $color-white;
+          }
+          &__link {
+            margin-top: 10px;
+            text-align: left;
+            text-decoration: none;
+            @include text-font(14px, 300, 14px, 0%);
+            color: $color-white;
+          }
+        }
+        .subscribe {
+          width: 40%;
+          height: 100%;
+          @include flex-vertical();
+          justify-content: flex-start;
+          &__heading {
+            @include text-font(16px, 300, 16px, 5%);
+            color: $color-white;
+          }
+          &__input-box {
+            margin-top: 10px;
+            width: 100%;
+            height: $input-height;
+            @include flex-horizontal();
+            &__input {
+              width: 80%;
+              padding-left: 10px;
+              @include text-font(16px, 300, 16px, 5%);
+              color: $color-grey-light;
+              background-color: $color-primary;
+              border: $color-primary-dark;
+            }
+            &__input:focus {
+              border: none;
+              outline: $color-primary-dark;
+              color: $color-primary-dark;
+              background-color: $color-grey-light;
+            }
+            &__button {
+              width: 20%;
+              @include text-font(16px, 300, 16px, 5%);
+              color: $color-primary-dark;
+              background-color: $color-white;
+              border: 1px solid $color-primary-dark;
+              cursor: pointer;
+            }
+            &__button:hover {
+              background-color: $color-grey-middle;
+            }
+            &__button:focus {
+              background-color: $color-grey-middle;
+            }
+          }
+        }
+      }
+    }
+    .footer-bottom {
+      margin: 0 auto;
+      width: 100%;
+      height: 20%;
+      @include flex-vertical();
+      &__box {
+        margin: 0 auto;
+        width: $block-width;
+        height: 40%;
+        @include flex-horizontal();
+        justify-content: space-between;
+        &__copyrights {
+          @include flex-vertical();
+          &__text {
+            margin: 0 auto;
+            @include text-font(14px, 300, 14px, 0%);
+            color: $color-white;
+          }
+        }
+        &__socials {
+          @include flex-vertical();
+          .socials-box {
+            margin: 0 auto;
+            @include flex-horizontal();
+            &__link {
+              margin: 0 auto;
+              margin-left: 10px;
+              @include flex-vertical();
+              img {
+                margin: 0 auto;
+              }
+              img:hover {
+                background-color: $color-grey;
+              }
+            }
+            &__link:active {
+              background-color: $color-grey;
+            }
+          }
+        }
+      }
+    }
   }
 }
