@@ -19,6 +19,9 @@ $block-maket-width: 1280px;
 $block-height: 584px;
 $block-width: math.div($block-maket-width, $site-maket-width) * $site-width;
 
+$catalog-slide-height: 209px;
+$catalog-slide-heading-left: (($site-width)-($block-width)) * 0.5;
+
 $coeff: math.div($block-height, $block-maket-width);
 
 $item-maket-width: 305px;

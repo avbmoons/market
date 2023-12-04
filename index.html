@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="styles/home/home.css" />
+    <script src="scripts/toCatalog.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -76,7 +77,10 @@
                 <p class="hero__block__heading__content">
                   The furniture brand for the future, with timeless designs
                 </p>
-                <button class="hero__block__heading__button">
+                <button
+                  class="hero__block__heading__button"
+                  onclick="toCatalog();"
+                >
                   View collection
                 </button>
               </div>
@@ -163,7 +167,9 @@
                     src="assets/catalog/item-1.png"
                     alt="photo"
                   />
-                  <a class="item-box__heading" href="#">The Dandy chair</a>
+                  <a class="item-box__heading" href="pages/product.html"
+                    >The Dandy chair</a
+                  >
                   <p class="item-box__price">2500&nbsp;&#8381;</p>
                 </div>
                 <div class="item-box">
@@ -283,7 +289,7 @@
             </nav>
             <nav class="menu" name="about">
               <p class="menu__heading">Our company</p>
-              <a class="menu__link" href="#">About us</a>
+              <a class="menu__link" href="pages/about.html">About us</a>
               <a class="menu__link" href="#">Vacancies</a>
               <a class="menu__link" href="#">Contact us</a>
               <a class="menu__link" href="#">Privacy</a>
