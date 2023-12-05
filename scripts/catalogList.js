@@ -38,29 +38,6 @@ class CatalogItem {
     <a class="item-box__heading" href="#">${this.name}</a>
     <p class="item-box__price">${this.priceActive}&nbsp;${this.currency}</p>
   </div>`;
-    //   return `<div class="catalog__block__item">
-    //   <div class="catalog__block__item__image">
-    //     <img src="${this.image}" alt="item" />
-    //   </div>
-    //   <a class="catalog__block__item__heading" href="#"
-    //     >${this.name}</a
-    //   >
-    //   <p class="catalog__block__item__weight">${this.weight}&nbsp;${this.units}</p>
-    //   <p class="catalog__block__item__text">${this.resume}</p>
-    //   <div class="catalog__block__item__shopping-box">
-    //     <div class="catalog__block__item__shopping-box__price-box">
-    //       <p class="catalog__block__item__shopping-box__price-box__origin"
-    //       >${this.priceOrigin}&nbsp;${this.currency}</p>
-    //       <p class="catalog__block__item__shopping-box__price-box__active"
-    //       >${this.priceActive}&nbsp;${this.currency}</p>
-    //     </div>
-    //     <div class="catalog__block__item__shopping-box__button-box">
-    //       <button class="to-cart">
-    //         <img src="../assets/icons/cart.png" alt="to-cart" />
-    //       </button>
-    //     </div>
-    //   </div>
-    // </div>`;
   }
 }
 

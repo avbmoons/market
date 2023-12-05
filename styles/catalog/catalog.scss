@@ -70,8 +70,11 @@ body {
                 @include flex-vertical();
                 display: none;
                 border: none;
+                background-color: $color-white;
+                z-index: 99;
                 &__link {
                   margin-top: 10px;
+                  padding-left: 10px;
                   text-decoration: none;
                   text-align: left;
                   @include text-font(14px, 300, 14px, 0%);
@@ -242,9 +245,49 @@ body {
             &__content {
               margin: 0 auto;
               width: 100%;
-              @include text-font(18px, 400, 18px, 0%);
-              color: $color-primary-dark;
-              text-align: left;
+              @include flex-horizontal();
+              justify-content: space-between;
+              &__text {
+                width: 85%;
+                @include text-font(18px, 400, 18px, 0%);
+                color: $color-primary-dark;
+                text-align: left;
+              }
+              &__services {
+                margin: 0 auto;
+                width: 15%;
+                height: auto;
+                @include flex-horizontal();
+                justify-content: flex-end;
+                .service-block {
+                  position: relative;
+                  margin-left: 20px;
+                  // background: none;
+                  // border: none;
+                  cursor: pointer;
+                  &__service {
+                    background: none;
+                    border: none;
+                  }
+                  &__content {
+                    width: 500%;
+                    @include flex-vertical();
+                    background: none;
+                    border: none;
+                    position: absolute;
+                    left: -200%;
+                    top: 100%;
+                    border: 1px solid green;
+                    display: none;
+                  }
+                }
+                .service-block:hover {
+                  background-color: $color-grey-middle;
+                }
+                .service-block:hover .service-block__content {
+                  display: inline-flex;
+                }
+              }
             }
           }
           &__items {
@@ -253,13 +296,14 @@ body {
             width: 100%;
             height: fit-content;
             @include flex-horizontal();
-            justify-content: space-between;
+            justify-content: flex-start;
             flex-wrap: wrap;
             .item-box {
-              margin-left: 10px;
-              //min-width: 23%;
-              min-width: 20%;
-              height: fit-content;
+              margin-right: 20px;
+              margin-bottom: 20px;
+              min-width: 25%;
+              max-width: 50%;
+              height: 100%;
               @include flex-vertical();
               justify-content: flex-start;
               &__image {
