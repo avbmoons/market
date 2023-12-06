@@ -32,6 +32,8 @@ $item-double-width: math.div($item-double-maket-width, $site-maket-width) *
   $site-width;
 $item-box-coeff: math.div($item-maket-width, $item-height);
 
+$cart-item-height: 134px;
+
 $input-height: 56px;
 $button-height: 56px;
 $button-confirm-maket-width: 108px; //143px;

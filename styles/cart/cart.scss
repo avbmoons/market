@@ -198,337 +198,308 @@ body {
       @include flex-vertical();
       justify-content: flex-start;
       background-color: $color-white;
-      // .hero {
-      //   margin: 0 auto;
-      //   margin-top: 40px;
-      //   width: $block-width;
-      //   //min-height: $block-height * $coeff;
-      //   min-height: $block-height;
-      //   @include flex-horizontal();
-      //   justify-content: space-between;
-      //   background-color: $color-grey-dark;
-      //   &__block {
-      //     min-width: 60%;
-      //     @include flex-vertical();
-      //     &__heading {
-      //       margin: 0 auto;
-      //       margin-top: 10px;
-      //       width: 100%;
-      //       height: 50%;
-      //       @include flex-vertical();
-      //       &__content {
-      //         margin: 0;
-      //         margin-left: 40px;
-      //         margin-bottom: 20px;
-      //         width: 60%;
-      //         @include text-font(22px, 300, 30px, 0%);
-      //         color: $color-white;
-      //       }
-      //       &__button {
-      //         margin: 0;
-      //         margin-top: 20px;
-      //         margin-left: 40px;
-      //         width: 30%;
-      //         height: $input-height;
-      //         @include text-font(16px, 300, 16px, 0%);
-      //         color: $color-white;
-      //         background-color: $color-primary;
-      //         border: none;
-      //         cursor: pointer;
-      //       }
-      //       &__button:hover {
-      //         background-color: $color-grey-middle;
-      //         color: $color-primary-dark;
-      //       }
-      //       &__button:focus {
-      //         background-color: $color-grey-middle;
-      //         color: $color-primary-dark;
-      //       }
-      //     }
-      //     &__text {
-      //       margin: 0 auto;
-      //       width: 100%;
-      //       height: 50%;
-      //       @include flex-vertical();
-      //       &__content {
-      //         margin: 0;
-      //         margin-left: 40px;
-      //         width: 60%;
-      //         @include text-font(16px, 300, 24px, 0%);
-      //         color: $color-white;
-      //       }
-      //     }
-      //   }
-      //   &__slide {
-      //     max-width: 40%;
-      //     height: $block-height;
-      //     @include flex-horizontal();
-      //     justify-content: flex-end;
-      //     img {
-      //       margin: 0 auto;
-      //       height: 100%;
-      //     }
-      //   }
-      // }
-      // .features {
-      //   margin: 0 auto;
-      //   margin-top: 40px;
-      //   width: $block-width;
-      //   min-height: $section-info-height;
-      //   @include flex-horizontal();
-      //   justify-content: space-between;
-      //   &__block {
-      //     width: 100%;
-      //     @include flex-vertical();
-      //     &__heading {
-      //       margin: 0 auto;
-      //       width: 100%;
-      //       height: 35%;
-      //       @include flex-vertical();
-      //       &__content {
-      //         margin: 0 auto;
-      //         //margin-left: 40px;
-      //         //margin-bottom: 20px;
-      //         width: 100%; // 60%;
-      //         @include text-font(18px, 400, 18px, 0%);
-      //         color: $color-primary-dark;
-      //         text-align: center;
-      //       }
-      //     }
-      //     &__items {
-      //       margin: 0 auto;
-      //       width: 100%;
-      //       height: 65%;
-      //       @include flex-horizontal();
-      //       justify-content: space-between;
-      //       .feature-box {
-      //         width: 23%;
-      //         height: 100%;
-      //         @include flex-vertical();
-      //         justify-content: flex-start;
-      //         &__image {
-      //           width: fit-content;
-      //         }
-      //         &__heading {
-      //           margin-top: 20px;
-      //           @include text-font(16px, 400, 16px, 0%);
-      //           color: $color-primary-dark;
-      //         }
-      //         &__content {
-      //           margin-top: 20px;
-      //           @include text-font(14px, 400, 22px, 0%);
-      //           color: $color-primary-dark;
-      //         }
-      //       }
-      //     }
-      //   }
-      // }
-      // .arrivals {
-      //   margin: 0 auto;
-      //   margin-top: 40px;
-      //   width: $block-width;
-      //   min-height: $section-height * $coeff;
-      //   @include flex-horizontal();
-      //   justify-content: space-between;
-      //   &__block {
-      //     width: 100%;
-      //     height: fit-content;
-      //     @include flex-vertical();
-      //     &__heading {
-      //       margin: 0 auto;
-      //       margin-top: 40px;
-      //       margin-bottom: 20px;
-      //       width: 100%;
-      //       height: fit-content;
-      //       @include flex-vertical();
-      //       justify-content: flex-start;
-      //       &__content {
-      //         margin: 0 auto;
-      //         width: 100%;
-      //         @include text-font(18px, 400, 18px, 0%);
-      //         color: $color-primary-dark;
-      //         text-align: left;
-      //       }
-      //     }
-      //     &__items {
-      //       margin: 0 auto;
-      //       margin-bottom: 40px;
-      //       width: 100%;
-      //       height: fit-content;
-      //       @include flex-horizontal();
-      //       justify-content: space-between;
-      //       .item-box {
-      //         margin-left: 10px;
-      //         min-width: 23%;
-      //         height: fit-content;
-      //         @include flex-vertical();
-      //         justify-content: flex-start;
-      //         &__image {
-      //           width: 100%;
-      //           height: auto;
-      //         }
-      //         &__heading {
-      //           margin-top: 10px;
-      //           text-decoration: none;
-      //           text-align: left;
-      //           @include text-font(16px, 400, 16px, 0%);
-      //           color: $color-primary-dark;
-      //         }
-      //         &__price {
-      //           margin-top: 20px;
-      //           @include text-font(16px, 400, 24px, 0%);
-      //           color: $color-primary-dark;
-      //         }
-      //         &__heading:hover {
-      //           color: $color-grey;
-      //           font-weight: 400;
-      //         }
-      //       }
-      //       .first {
-      //         margin-left: 0;
-      //       }
-      //     }
-      //   }
-      // }
-      // .popular {
-      //   margin: 0 auto;
-      //   margin-top: 40px;
-      //   width: $block-width;
-      //   min-height: $section-height * $coeff;
-      //   @include flex-horizontal();
-      //   justify-content: space-between;
-      //   &__block {
-      //     width: 100%;
-      //     height: fit-content;
-      //     @include flex-vertical();
-      //     &__heading {
-      //       margin: 0 auto;
-      //       margin-top: 40px;
-      //       margin-bottom: 20px;
-      //       width: 100%;
-      //       height: fit-content;
-      //       @include flex-vertical();
-      //       justify-content: flex-start;
-      //       &__content {
-      //         margin: 0 auto;
-      //         width: 100%;
-      //         @include text-font(18px, 400, 18px, 0%);
-      //         color: $color-primary-dark;
-      //         text-align: left;
-      //       }
-      //     }
-      //     &__items {
-      //       margin: 0 auto;
-      //       margin-bottom: 40px;
-      //       width: 100%;
-      //       height: fit-content;
-      //       @include flex-horizontal();
-      //       justify-content: space-between;
-      //       .item-box {
-      //         margin-left: 10px;
-      //         min-width: 23%;
-      //         height: fit-content;
-      //         @include flex-vertical();
-      //         justify-content: flex-start;
-      //         &__image {
-      //           width: 100%;
-      //           height: auto;
-      //         }
-      //         &__heading {
-      //           margin-top: 10px;
-      //           text-decoration: none;
-      //           text-align: left;
-      //           @include text-font(16px, 400, 16px, 0%);
-      //           color: $color-primary-dark;
-      //         }
-      //         &__price {
-      //           margin-top: 20px;
-      //           @include text-font(16px, 400, 24px, 0%);
-      //           color: $color-primary-dark;
-      //         }
-      //         &__heading:hover {
-      //           color: $color-grey;
-      //           font-weight: 400;
-      //         }
-      //       }
-      //       .first {
-      //         margin-left: 0;
-      //       }
-      //     }
-      //   }
-      // }
-      // .feedback {
-      //   margin: 0 auto;
-      //   margin-top: 40px;
-      //   margin-bottom: 40px;
-      //   width: $block-width;
-      //   min-height: $block-height * $coeff;
-      //   @include flex-vertical();
-      //   &__heading {
-      //     margin: 0 auto;
-      //     width: 100%;
-      //     height: fit-content;
-      //     @include text-font(26px, 400, 26px, 0%);
-      //     color: $color-primary-dark;
-      //     text-align: center;
-      //   }
-      //   &__content {
-      //     margin: 0 auto;
-      //     margin-top: 20px;
-      //     width: 50%;
-      //     height: fit-content;
-      //     @include text-font(16px, 400, 16px, 0%);
-      //     color: $color-primary-dark;
-      //     text-align: center;
-      //   }
-      //   &__form {
-      //     margin: 0 auto;
-      //     margin-top: 20px;
-      //     width: 50%;
-      //     height: fit-content;
-      //     .subscribe {
-      //       margin-bottom: 20px;
-      //       width: 100%;
-      //       height: 100%;
-      //       @include flex-vertical();
-      //       justify-content: flex-start;
-      //       &__input-box {
-      //         margin-top: 10px;
-      //         width: 100%;
-      //         height: $input-height;
-      //         @include flex-horizontal();
-      //         &__input {
-      //           width: 80%;
-      //           padding-left: 10px;
-      //           @include text-font(16px, 300, 16px, 5%);
-      //           color: $color-grey-light;
-      //           background-color: $color-white;
-      //           border: 1px solid $color-grey-light;
-      //         }
-      //         &__input:focus {
-      //           border: none;
-      //           outline: $color-primary-dark;
-      //           color: $color-primary-dark;
-      //           background-color: $color-grey-middle;
-      //         }
-      //         &__button {
-      //           width: 20%;
-      //           @include text-font(16px, 300, 16px, 5%);
-      //           color: $color-white;
-      //           background-color: $color-primary-dark;
-      //           border: 1px solid $color-primary-dark;
-      //           cursor: pointer;
-      //         }
-      //         &__button:hover {
-      //           background-color: $color-grey-middle;
-      //         }
-      //         &__button:focus {
-      //           background-color: $color-grey-middle;
-      //         }
-      //       }
-      //     }
-      //   }
-      // }
+      .cart {
+        margin: 0 auto;
+        margin-top: 40px;
+        width: $block-width;
+        min-height: $section-height * $coeff;
+        @include flex-horizontal();
+        justify-content: space-between;
+        &__block {
+          width: 100%;
+          height: fit-content;
+          @include flex-vertical();
+          .crumbs {
+            margin: 0;
+            max-width: $block-width;
+            @include flex-horizontal();
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            &__link {
+              //margin-left: 10px;
+              text-decoration: none;
+              text-align: left;
+              @include text-font(14px, 300, 14px, 0%);
+              color: $color-grey-dark;
+            }
+            &__link:hover {
+              text-decoration: underline;
+            }
+            &__link:last-child {
+              font-weight: 400;
+            }
+          }
+          &__heading {
+            margin: 0 auto;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            width: 100%;
+            height: fit-content;
+            @include flex-vertical();
+            justify-content: flex-start;
+            &__content {
+              margin: 0 auto;
+              width: 100%;
+              @include text-font(18px, 400, 18px, 0%);
+              color: $color-primary-dark;
+              text-align: left;
+            }
+          }
+          &__titles {
+            margin: 0 auto;
+            margin-top: 40px;
+            width: 100%;
+            @include flex-horizontal();
+            justify-content: flex-end;
+            &__point {
+              color: $color-grey-dark;
+            }
+            &__point:first-child {
+              width: 40%;
+            }
+            &__point:nth-child(2) {
+              width: 15%;
+              text-align: center;
+            }
+            &__point:nth-child(3) {
+              width: 20%;
+              text-align: center;
+            }
+            &__point:nth-child(4) {
+              padding-right: 10px;
+              width: 20%;
+              text-align: right;
+            }
+            &__point:last-child {
+              width: 5%;
+              text-align: right;
+            }
+          }
+          &__items {
+            margin: 0 auto;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            width: 100%;
+            height: fit-content;
+            @include flex-vertical();
+            justify-content: center;
+            &__item {
+              margin: 0 auto;
+              margin-top: 10px;
+              width: 100%;
+              height: $cart-item-height;
+              @include flex-horizontal();
+              justify-content: space-between;
+              //border: 1px solid $color-grey-light;
+              border-radius: 2px;
+              &__product {
+                width: 40%;
+                height: inherit;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                &__image {
+                  margin: 0;
+                  height: $cart-item-height;
+                  @include flex-vertical();
+                  img {
+                    height: $cart-item-height;
+                  }
+                }
+                &__name-box {
+                  margin: 0;
+                  margin-left: 10px;
+                  width: auto;
+                  @include flex-vertical();
+                  &__name {
+                    @include text-font(20px, 400, 20px, 0%);
+                    text-align: left;
+                    color: $color-grey-dark;
+                  }
+                  &__resume {
+                    margin-top: 10px;
+                    @include text-font(14px, 300, 14px, 0%);
+                    text-align: left;
+                    color: $color-grey-dark;
+                  }
+                }
+              }
+
+              &__price-box {
+                margin: 0 auto;
+                width: 15%;
+                height: inherit;
+                @include flex-vertical();
+                @include text-font(20px, 300, 20px, 0%);
+                color: $color-grey-dark;
+                &__origin {
+                  width: 100%;
+                  @include text-font(18px, 400, 18px, 0%);
+                  font-style: italic;
+                  text-decoration: line-through;
+                  text-align: center;
+                  color: $color-grey-middle;
+                  display: none;
+                }
+                &__active {
+                  width: 100%;
+                  @include text-font(20px, 300, 20px, 0%);
+                  text-align: center;
+                  color: $color-grey-dark;
+                }
+              }
+              &__counter-box {
+                margin: 0 auto;
+                width: 20%;
+                height: inherit;
+                @include flex-vertical();
+                .counter {
+                  margin: 0 auto;
+                  width: 75%;
+                  height: fit-content;
+                  vertical-align: middle;
+                  @include flex-horizontal();
+                  &__minus {
+                    width: 25%;
+                    @include text-font(20px, 300, 20px, 0%);
+                    color: $color-grey-dark;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                  }
+                  &__value {
+                    width: 50%;
+                    @include text-font(20px, 300, 20px, 0%); // font-mix();
+                    text-align: center;
+                    color: $color-grey-dark;
+                    //background-color: $color-background;
+                    border: none;
+                  }
+                  &__plus {
+                    width: 25%;
+                    @include text-font(20px, 300, 20px, 0%);
+                    color: $color-grey-dark;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                  }
+                }
+              }
+
+              &__total-box {
+                margin: 0 auto;
+                width: 20%;
+                height: inherit;
+                @include flex-vertical();
+                @include text-font(20px, 300, 20px, 0%);
+                color: $color-grey-dark;
+                &__origin {
+                  padding-right: 10px;
+                  @include text-font(18px, 400, 18px, 0%);
+                  font-style: italic;
+                  text-decoration: line-through;
+                  text-align: right;
+                  color: $color-grey-middle;
+                  display: none;
+                }
+                &__active {
+                  padding-right: 10px;
+                  @include text-font(18px, 400, 18px, 0%); // font-price();
+                  text-align: right;
+                  color: $color-grey-dark;
+                }
+              }
+              &__button-box {
+                margin: 0 auto;
+                width: 5%;
+                height: 100%;
+                @include flex-vertical();
+                @include text-font(20px, 300, 20px, 0%);
+                color: $color-grey-dark;
+                .button-delete {
+                  margin: 0 auto;
+                  margin-bottom: 5px;
+                  padding: 0;
+                  height: auto;
+                  background: none;
+                  border: none;
+                  cursor: pointer;
+                }
+              }
+            }
+            .first {
+              margin-left: 0;
+            }
+          }
+          &__total {
+            margin: 0 auto;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            width: 100%;
+            min-height: $input-height;
+            @include flex-horizontal();
+            justify-content: flex-end;
+            &__block {
+              margin: 0;
+              width: 35%;
+              min-height: $input-height;
+              @include flex-vertical();
+              &__input {
+                margin: 0;
+                width: 100%; // auto;
+                height: fit-content;
+                @include flex-horizontal();
+                justify-content: flex-end;
+                align-items: flex-end;
+                &__label {
+                  margin-right: 20px;
+                  @include text-font(18px, 300, 18px, 0%);
+                  color: $color-grey-dark;
+                }
+                &__value {
+                  margin-top: 10px;
+                  padding: 0;
+                  height: fit-content;
+                  @include text-font(20px, 400, 20px, 0%);
+                  text-align: right;
+                  color: $color-grey-dark;
+                  border: none;
+                }
+                &__currency {
+                  margin-left: 10px;
+                  @include text-font(20px, 400, 20px, 0%);
+                  font-weight: 300;
+                  color: $color-grey-dark;
+                }
+              }
+              .info {
+                margin-top: 20px;
+                @include text-font(12px, 400, 12px, 0%);
+                color: $color-primary;
+                text-align: right;
+              }
+              &__button {
+                margin: 0;
+                margin-top: 20px;
+                width: 100%;
+                min-height: $button-height;
+                @include flex-horizontal();
+                justify-content: flex-end;
+                align-self: flex-end;
+                &__apply {
+                  padding: 0 20px 0 20px;
+                  width: fit-content;
+                  height: $button-height;
+                  @include text-font(20px, 300, 20px, 0%);
+                  color: $color-white;
+                  background-color: $color-primary-dark;
+                  border: none;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
   footer {

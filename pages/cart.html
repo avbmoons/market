@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart</title>
     <link rel="stylesheet" href="../styles/cart/cart.css" />
+    <script src="../scripts/toOrder.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -24,7 +25,7 @@
                     <a class="menu__content__link" href="#"
                       >Popular this week</a
                     >
-                    <a class="menu__content__link last" href="#"
+                    <a class="menu__content__link last" href="catalog.html"
                       >All products</a
                     >
                   </div>
@@ -72,7 +73,172 @@
             </div>
           </nav>
         </header>
-        <main></main>
+        <main>
+          <section class="cart" name="cart">
+            <div class="cart__block">
+              <li class="crumbs">
+                <a class="crumbs__link" href="../index.html">Home /</a>
+                <a class="crumbs__link" href="cart.html">Cart /</a>
+              </li>
+              <div class="cart__block__heading">
+                <p class="cart__block__heading__content">Your shopping cart</p>
+              </div>
+              <li class="cart__block__titles">
+                <p class="cart__block__titles__point" href="#">Product</p>
+                <p class="cart__block__titles__point" href="#">Price</p>
+                <p class="cart__block__titles__point" href="#">Quantity</p>
+                <p class="cart__block__titles__point" href="#">Amount</p>
+                <p class="cart__block__titles__point" href="#"></p>
+              </li>
+              <div class="cart__block__items">
+                <div class="cart__block__items__item">
+                  <div class="cart__block__items__item__product">
+                    <div class="cart__block__items__item__product__image">
+                      <img src="../assets/catalog/item-11.png" alt="photo" />
+                    </div>
+                    <div class="cart__block__items__item__product__name-box">
+                      <p
+                        class="cart__block__items__item__product__name-box__name"
+                      >
+                        The Solars Chair
+                      </p>
+                      <p
+                        class="cart__block__items__item__product__name-box__resume"
+                      >
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Neque voluptatibus laboriosam rem
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="cart__block__items__item__price-box">
+                    <p class="cart__block__items__item__price-box__origin">
+                      135&nbsp;&pound;
+                    </p>
+                    <p class="cart__block__items__item__price-box__active">
+                      135&nbsp;&pound;
+                    </p>
+                  </div>
+                  <div class="cart__block__items__item__counter-box">
+                    <div class="counter">
+                      <button class="counter__minus">-</button>
+                      <input class="counter__value" type="text" value="2" />
+                      <button class="counter__plus">+</button>
+                    </div>
+                  </div>
+                  <div class="cart__block__items__item__total-box">
+                    <p class="cart__block__items__item__total-box__origin">
+                      270&nbsp;&pound;
+                    </p>
+                    <p class="cart__block__items__item__total-box__active">
+                      270&nbsp;&pound;
+                    </p>
+                  </div>
+                  <div class="cart__block__items__item__button-box">
+                    <button class="button-delete">
+                      <img
+                        src="../assets/icons/see.png"
+                        alt="see doc"
+                        title="See product"
+                      />
+                    </button>
+                    <button class="button-delete">
+                      <img
+                        src="../assets/icons/delete.png"
+                        alt="delete"
+                        title="Delete"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div class="cart__block__items__item">
+                  <div class="cart__block__items__item__product">
+                    <div class="cart__block__items__item__product__image">
+                      <img src="../assets/catalog/item-3.png" alt="photo" />
+                    </div>
+                    <div class="cart__block__items__item__product__name-box">
+                      <p
+                        class="cart__block__items__item__product__name-box__name"
+                      >
+                        The Silky Vase
+                      </p>
+                      <p
+                        class="cart__block__items__item__product__name-box__resume"
+                      >
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Neque voluptatibus laboriosam rem
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="cart__block__items__item__price-box">
+                    <p class="cart__block__items__item__price-box__origin">
+                      125&nbsp;&pound;
+                    </p>
+                    <p class="cart__block__items__item__price-box__active">
+                      125&nbsp;&pound;
+                    </p>
+                  </div>
+                  <div class="cart__block__items__item__counter-box">
+                    <div class="counter">
+                      <button class="counter__minus">-</button>
+                      <input class="counter__value" type="text" value="1" />
+                      <button class="counter__plus">+</button>
+                    </div>
+                  </div>
+                  <div class="cart__block__items__item__total-box">
+                    <p class="cart__block__items__item__total-box__origin">
+                      125&nbsp;&pound;
+                    </p>
+                    <p class="cart__block__items__item__total-box__active">
+                      125&nbsp;&pound;
+                    </p>
+                  </div>
+                  <div class="cart__block__items__item__button-box">
+                    <button class="button-delete">
+                      <img
+                        src="../assets/icons/see.png"
+                        alt="see doc"
+                        title="See product"
+                      />
+                    </button>
+                    <button class="button-delete">
+                      <img
+                        src="../assets/icons/delete.png"
+                        alt="delete"
+                        title="Delete"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="cart__block__total">
+                <div class="cart__block__total__block">
+                  <div class="cart__block__total__block__input">
+                    <p class="cart__block__total__block__input__label">
+                      Subtotal:
+                    </p>
+                    <p class="cart__block__total__block__input__value">395</p>
+                    <p class="cart__block__total__block__input__currency">
+                      &pound;
+                    </p>
+                  </div>
+                  <p class="info">
+                    Taxes and shipping are calculated at checkout
+                  </p>
+                  <div class="cart__block__total__block__button">
+                    <button
+                      class="cart__block__total__block__button__apply"
+                      onclick="toOrder();"
+                    >
+                      Go to checkout
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
       </div>
       <footer>
         <div class="footer-block">
