@@ -16,7 +16,7 @@ $section-height: 704px;
 $section-info-height: 355px;
 
 $block-maket-width: 1280px;
-$block-height: 584px;
+$block-height: 70vh; // 450px; // 584px;
 $block-width: math.div($block-maket-width, $site-maket-width) * $site-width;
 
 $catalog-slide-height: 209px;

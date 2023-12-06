@@ -199,13 +199,14 @@ body {
         margin: 0 auto;
         margin-top: 40px;
         width: $block-width;
-        //min-height: $block-height * $coeff;
-        min-height: $block-height;
+        //min-height: $block-height;
+        height: $block-height;
         @include flex-horizontal();
         justify-content: space-between;
         background-color: $color-grey-dark;
         &__block {
-          min-width: 60%;
+          min-width: 50%;
+          height: 100%;
           @include flex-vertical();
           &__heading {
             margin: 0 auto;
@@ -223,7 +224,7 @@ body {
             }
             &__button {
               margin: 0;
-              margin-top: 20px;
+              margin-top: 40px;
               margin-left: 40px;
               width: 30%;
               height: $input-height;
@@ -257,11 +258,12 @@ body {
           }
         }
         &__slide {
-          max-width: 40%;
-          height: $block-height;
+          max-width: 50%;
+          height: 100%;
+          //height: $block-height;
           @include flex-horizontal();
           justify-content: flex-end;
-          img {
+          .slide-img {
             margin: 0 auto;
             height: 100%;
           }
@@ -355,7 +357,7 @@ body {
             @include flex-horizontal();
             justify-content: space-between;
             .item-box {
-              margin-left: 10px;
+              margin-right: 10px;
               min-width: 23%;
               height: fit-content;
               @include flex-vertical();
@@ -421,9 +423,11 @@ body {
             height: fit-content;
             @include flex-horizontal();
             justify-content: space-between;
+            //flex-wrap: wrap;
             .item-box {
-              margin-left: 10px;
+              margin-right: 10px;
               min-width: 23%;
+              max-width: 50%;
               height: fit-content;
               @include flex-vertical();
               justify-content: flex-start;

@@ -86,8 +86,8 @@ const catalog = [
     currency: "&pound;",
     category: "Beverage",
     type: "Tea",
-    isPopular: "true",
-    isNew: "true",
+    isPopular: "false",
+    isNew: "false",
   },
   {
     id: 6,
@@ -158,8 +158,8 @@ const catalog = [
     currency: "&pound;",
     category: "Desserts",
     type: "Sugar",
-    isPopular: "true",
-    isNew: "true",
+    isPopular: "false",
+    isNew: "false",
   },
   {
     id: 10,
@@ -176,8 +176,8 @@ const catalog = [
     currency: "&#8381;",
     category: "Beverage",
     type: "Coffee",
-    isPopular: "true",
-    isNew: "true",
+    isPopular: "false",
+    isNew: "false",
   },
   {
     id: 11,
@@ -194,8 +194,8 @@ const catalog = [
     currency: "&pound;",
     category: "Beverage",
     type: "Coffee",
-    isPopular: "true",
-    isNew: "true",
+    isPopular: "false",
+    isNew: "false",
   },
   {
     id: 12,
@@ -212,7 +212,7 @@ const catalog = [
     currency: "&pound;",
     category: "Beverage",
     type: "Coffee",
-    isPopular: "true",
+    isPopular: "false",
     isNew: "true",
   },
   {
@@ -248,7 +248,7 @@ const catalog = [
     currency: "&pound;",
     category: "Beverage",
     type: "Coffee",
-    isPopular: "true",
+    isPopular: "false",
     isNew: "false",
   },
   {
@@ -266,8 +266,8 @@ const catalog = [
     currency: "&pound;",
     category: "Beverage",
     type: "Coffee",
-    isPopular: "true",
-    isNew: "true",
+    isPopular: "false",
+    isNew: "false",
   },
   {
     id: 16,
@@ -285,7 +285,7 @@ const catalog = [
     category: "Beverage",
     type: "Coffee",
     isPopular: "false",
-    isNew: "true",
+    isNew: "false",
   },
   {
     id: 17,
@@ -303,7 +303,7 @@ const catalog = [
     category: "Beverage",
     type: "Coffee",
     isPopular: "false",
-    isNew: "true",
+    isNew: "false",
   },
   {
     id: 18,
@@ -320,7 +320,7 @@ const catalog = [
     currency: "&pound;",
     category: "Beverage",
     type: "Coffee",
-    isPopular: "true",
+    isPopular: "false",
     isNew: "false",
   },
 ];
