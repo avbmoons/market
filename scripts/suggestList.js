@@ -32,21 +32,21 @@ class CatalogItem {
   }
   render() {
     return `<div class="item-box">
-    <img class="item-box__image"
-      src="${this.image}"
-      alt="photo"/>
-    <a class="item-box__heading" href="product.html">${this.name}</a>
-    <p class="item-box__price">${this.priceActive}&nbsp;${this.currency}</p>
-  </div>`;
+        <img class="item-box__image"
+          src="${this.image}"
+          alt="photo"/>
+        <a class="item-box__heading" href="../pages/product.html">${this.name}</a>
+        <p class="item-box__price">${this.priceActive}&nbsp;${this.currency}</p>
+      </div>`;
   }
 }
 
-class CatalogList {
+class SuggestList {
   constructor() {
     this.ccatalog = [];
   }
-  fetchCatalog() {
-    this.ccatalog = catalog;
+  fetchSuggest() {
+    this.ccatalog = catalog.filter((catalog) => catalog.isPopular == "true");
   }
   render() {
     let listHtml = "";
@@ -54,7 +54,7 @@ class CatalogList {
       const catalogItem = new CatalogItem(
         ccatalog.id,
         ccatalog.name,
-        ccatalog.image,
+        ccatalog.image, //.replace("../", ""),
         ccatalog.weight,
         ccatalog.units,
         ccatalog.resume,
@@ -69,10 +69,10 @@ class CatalogList {
       );
       listHtml += catalogItem.render();
     });
-    document.querySelector(".catalog__block__items").innerHTML = listHtml;
+    document.querySelector(".suggest__block__items").innerHTML = listHtml;
   }
 }
 
-const list = new CatalogList();
-list.fetchCatalog();
-list.render();
+const listSugg = new SuggestList();
+listSugg.fetchSuggest();
+listSugg.render();

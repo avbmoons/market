@@ -355,7 +355,7 @@ body {
   box-sizing: border-box;
   justify-content: flex-end;
 }
-.wrapper .top main .hero__slide img {
+.wrapper .top main .hero__slide .slide-img {
   margin: 0 auto;
   height: 100%;
 }
@@ -437,7 +437,7 @@ body {
   margin: 0 auto;
   margin-top: 40px;
   width: 88.8888888889%;
-  min-height: 247.5px;
+  min-height: 38.5vh;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
@@ -530,7 +530,7 @@ body {
   margin: 0 auto;
   margin-top: 40px;
   width: 88.8888888889%;
-  min-height: 247.5px;
+  min-height: 38.5vh;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
@@ -625,7 +625,7 @@ body {
   margin-top: 40px;
   margin-bottom: 40px;
   width: 88.8888888889%;
-  min-height: 158.203125px;
+  min-height: 355px;
   display: flex;
   flex-direction: column;
   justify-content: center;

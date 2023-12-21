@@ -35,7 +35,7 @@ class CatalogItem {
       <img class="item-box__image"
         src="${this.image}"
         alt="photo"/>
-      <a class="item-box__heading" href="#">${this.name}</a>
+      <a class="item-box__heading" href="pages/product.html">${this.name}</a>
       <p class="item-box__price">${this.priceActive}&nbsp;${this.currency}</p>
     </div>`;
   }
