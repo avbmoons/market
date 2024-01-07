@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../styles/catalog/catalog.css" />
     <script defer src="../data/catalog.js"></script>
     <script defer src="../scripts/catalogList.js"></script>
+    <script defer src="../scripts/showModal.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -107,6 +108,36 @@
                 </div>
               </div>
               <div class="catalog__block__items"></div>
+            </div>
+          </section>
+          <section class="modal" id="modal">
+            <div class="modal__block" id="modal__block">
+              <button class="modal__block__close" id="modalClose">
+                &#10006;
+              </button>
+              <div class="modal__block__items">
+                <div data-id="1" class="product">
+                  <div class="product__image-box" id="productImage"></div>
+                  <div class="product__text-box">
+                    <div
+                      class="product__text-box__heading"
+                      id="productTitle"
+                    ></div>
+                    <div
+                      class="product__text-box__resume"
+                      id="productResume"
+                    ></div>
+                    <div
+                      class="product__text-box__price-box"
+                      id="productPrice"
+                    ></div>
+                    <div class="product__text-box__button-box">
+                      <a class="to-product-page" href="#">More details...</a>
+                      <button class="to-cart">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
         </main>

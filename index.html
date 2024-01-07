@@ -9,6 +9,7 @@
     <script defer src="data/catalog.js"></script>
     <script defer src="data/slides.js"></script>
     <script defer src="scripts/popularList.js"></script>
+    <script defer src="scripts/showModal.js"></script>
     <script defer src="scripts/slider.js"></script>
   </head>
   <body>
@@ -284,6 +285,43 @@
                     placeholder="your@email.com"
                   />
                   <button class="subscribe__input-box__button">Sign up</button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="modal" id="modal">
+            <div class="modal__block" id="modal__block">
+              <button class="modal__block__close" id="modalClose">
+                &#10006;
+              </button>
+              <div class="modal__block__items">
+                <div data-id="1" class="product">
+                  <div class="product__image-box" id="productImage">
+                    <!-- <img
+                      class="product__image-box__image"
+                      id="product-1"
+                      src="../assets/catalog/item-4.png"
+                      alt="photo"
+                    /> -->
+                  </div>
+                  <div class="product__text-box">
+                    <div
+                      class="product__text-box__heading"
+                      id="productTitle"
+                    ></div>
+                    <div
+                      class="product__text-box__resume"
+                      id="productResume"
+                    ></div>
+                    <div
+                      class="product__text-box__price-box"
+                      id="productPrice"
+                    ></div>
+                    <div class="product__text-box__button-box">
+                      <a class="to-product-page" href="#">More details...</a>
+                      <button class="to-cart">Add to cart</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

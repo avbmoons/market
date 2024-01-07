@@ -32,12 +32,17 @@ class CatalogItem {
   }
   render() {
     return `<div class="item-box">
-        <img class="item-box__image"
-          src="${this.image}"
-          alt="photo"/>
-        <a class="item-box__heading" href="../pages/product.html">${this.name}</a>
-        <p class="item-box__price">${this.priceActive}&nbsp;${this.currency}</p>
-      </div>`;
+      <img class="item-box__image"
+        src="${this.image}"
+        alt="photo"/>
+      <a class="item-box__heading" href="product.html">${this.name}</a>
+      <div class="item-box__bottom-box">
+        <div class="stores">
+            <p class="price">${this.priceActive}&nbsp;${this.currency}</p>
+            <button class="to-cart">Add to cart</button>
+        </div>
+      </div>
+    </div>`;
   }
 }
 

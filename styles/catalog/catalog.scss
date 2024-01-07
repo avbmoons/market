@@ -1,6 +1,8 @@
 @use "sass:math";
 
 @import "../vars/vars.scss";
+@import "../itemBox/itemBox.scss";
+@import "../modal/modal.scss";
 
 * {
   margin: 0;
@@ -298,35 +300,6 @@ body {
             @include flex-horizontal();
             justify-content: flex-start;
             flex-wrap: wrap;
-            .item-box {
-              margin-right: 20px;
-              margin-bottom: 20px;
-              min-width: 25%;
-              max-width: 50%;
-              height: 100%;
-              @include flex-vertical();
-              justify-content: flex-start;
-              &__image {
-                width: 100%;
-                height: auto;
-              }
-              &__heading {
-                margin-top: 10px;
-                text-decoration: none;
-                text-align: left;
-                @include text-font(16px, 400, 16px, 0%);
-                color: $color-primary-dark;
-              }
-              &__price {
-                margin-top: 20px;
-                @include text-font(16px, 400, 24px, 0%);
-                color: $color-primary-dark;
-              }
-              &__heading:hover {
-                color: $color-grey;
-                font-weight: 400;
-              }
-            }
             .first {
               margin-left: 0;
             }
@@ -459,4 +432,7 @@ body {
       }
     }
   }
+}
+.lock {
+  overflow-y: hidden;
 }

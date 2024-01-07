@@ -34,9 +34,15 @@ class CatalogItem {
     return `<div class="item-box">
     <img class="item-box__image"
       src="${this.image}"
+      id="item-${this.id}"
       alt="photo"/>
     <a class="item-box__heading" href="product.html">${this.name}</a>
-    <p class="item-box__price">${this.priceActive}&nbsp;${this.currency}</p>
+    <div class="item-box__bottom-box">
+      <div class="stores">
+        <p class="price">${this.priceActive}&nbsp;${this.currency}</p>
+        <button class="to-cart">Add to cart</button>
+      </div>
+    </div>
   </div>`;
   }
 }

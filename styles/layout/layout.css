@@ -439,4 +439,8 @@ body {
 }
 .wrapper footer .footer-bottom__box__socials .socials-box__link:active {
   background-color: #726e8d;
+}
+
+.lock {
+  overflow-y: hidden;
 }/*# sourceMappingURL=layout.css.map */

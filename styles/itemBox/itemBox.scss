@@ -1,0 +1,70 @@
+@use "sass:math";
+
+@import "../vars/vars.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+}
+
+.item-box {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  min-width: 25%;
+  max-width: 50%;
+  height: 100%;
+  @include flex-vertical();
+  justify-content: flex-start;
+  border: 1px solid $color-grey-middle;
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+  &__heading {
+    margin-top: 10px;
+    text-decoration: none;
+    text-align: left;
+    @include text-font(16px, 400, 16px, 0%);
+    color: $color-primary-dark;
+  }
+  &__bottom-box {
+    margin-top: 20px;
+    //margin-bottom: 10px;
+    @include flex-vertical();
+    justify-content: center;
+    //border: 1px solid green;
+    .stores {
+      @include flex-horizontal();
+      justify-content: space-between;
+      .price {
+        padding: 2px;
+        @include text-font(16px, 400, 24px, 0%);
+        color: $color-primary-dark;
+      }
+      .to-cart {
+        padding-left: 5px;
+        padding-right: 5px;
+        background: none;
+        border: 1px solid white;
+        border-radius: 2px;
+        @include text-font(14px, 400, 24px, 0%);
+        color: $color-marine;
+        cursor: pointer;
+        box-sizing: border-box;
+      }
+      .to-cart:hover {
+        border: 1px solid $color-primary;
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__heading:hover {
+    color: $color-grey;
+    font-weight: 400;
+  }
+}

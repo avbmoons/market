@@ -6,64 +6,152 @@
   margin: 0;
   padding: 0;
 }
-// .item-box {
-//   width: $item-width;
-//   height: $item-height;
-//   border: 1px solid red;
-// }
-.item-box {
-  margin-left: 10px;
-  width: $item-width;
-  height: $item-height;
-  @include flex-vertical();
-  justify-content: flex-start;
-  border: 1px solid red;
-  &__image {
-    width: 100%;
-    height: auto;
-  }
-  &__heading {
-    margin-top: 10px;
-    text-decoration: none;
-    text-align: left;
-    @include text-font(16px, 400, 16px, 0%);
-    color: $color-primary-dark;
-  }
-  &__price {
-    margin-top: 20px;
-    @include text-font(16px, 400, 24px, 0%);
-    color: $color-primary-dark;
-  }
-  &__heading:hover {
-    color: $color-grey;
-    font-weight: 400;
-  }
+
+body {
+  font-family: Roboto;
 }
 
 .modal {
-  margin: 0 auto;
-  display: none;
-  position: fixed; // relative; // fixed;
-  z-index: 1;
-  left: 0;
+  position: fixed;
   top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #000;
-  opacity: 0.4;
-
-  &__content {
-    //margin: 0 auto;
-    //position: absolute;
-    background-color: #fff;
-    margin: 20vh auto; // 100px auto;
-    padding: 20px;
-    width: 50%;
-    font-size: 20px;
-    display: flex;
-    justify-content: space-between;
-    span {
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(black, 0.43);
+  z-index: 10;
+  display: none;
+  justify-content: center;
+  box-sizing: border-box;
+  align-items: center;
+  user-select: none;
+  &__block {
+    margin: 0 auto;
+    width: 65%;
+    height: 60%;
+    @include flex-vertical();
+    justify-content: space-around;
+    overflow: auto;
+    position: relative;
+    border-radius: 2px;
+    background-color: $color-white;
+    &__close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 5px;
+      @include text-font(20px, 500, 20px, 0%);
+      color: $color-grey;
       cursor: pointer;
+      border: none;
+      background-color: $color-white;
+      opacity: 1;
+      z-index: 999;
     }
+    &__close:hover {
+      color: $color-marine;
+    }
+    &__items {
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      @include flex-horizontal();
+      justify-content: space-between;
+      flex-wrap: wrap;
+      @include text-font(14px, 300, 14px, 0%);
+      color: $color-primary-dark;
+      .product {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        @include flex-horizontal();
+        justify-content: space-between;
+        border-radius: 2px;
+        background-color: $color-white;
+        overflow-y: auto;
+        &__image-box {
+          margin: 0;
+          height: 100%;
+          width: auto;
+          @include flex-vertical();
+          &__image {
+            margin: 0;
+            width: auto;
+            height: 100%;
+          }
+        }
+        &__text-box {
+          margin: 0;
+          height: 100%;
+          min-width: 50%;
+          @include flex-vertical();
+          justify-content: space-around;
+          &__heading {
+            margin: 0 auto;
+            margin-top: 10px;
+            width: 80%;
+            @include text-font(16px, 500, 16px, 0%);
+            color: $color-primary;
+            text-align: left;
+          }
+          &__resume {
+            margin: 0 auto;
+            margin-top: 10px;
+            width: 80%;
+            .product-resume {
+              @include text-font(14px, 300, 14px, 0%);
+              color: $color-primary;
+              text-align: left;
+            }
+          }
+          &__price-box {
+            margin: 0 auto;
+            margin-top: 10px;
+            width: 80%;
+            @include flex-vertical();
+            .product-price-origin {
+              @include text-font(16px, 400, 16px, 0%);
+              color: $color-primary;
+            }
+            .product-price-active {
+              margin-top: 10px;
+              @include text-font(18px, 500, 16px, 0%);
+              color: $color-primary-dark;
+            }
+          }
+          &__button-box {
+            margin: 10px auto;
+            width: 80%;
+            height: fit-content;
+            @include flex-horizontal();
+            justify-content: space-between;
+            .to-product-page {
+              padding: 5px;
+              @include text-font(14px, 400, 14px, 0%);
+              color: $color-primary;
+              font-style: italic;
+              text-decoration: none;
+              border-bottom: 1px solid $color-primary;
+            }
+            .to-cart {
+              padding: 5px;
+              background: none;
+              border: 1px solid white;
+              border-radius: 2px;
+              @include text-font(14px, 400, 14px, 0%);
+              color: $color-marine;
+              cursor: pointer;
+              box-sizing: border-box;
+            }
+            .to-cart:hover {
+              border: 1px solid $color-primary;
+              color: $color-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+  &--open {
+    display: flex;
   }
 }
