@@ -8,6 +8,7 @@
     <script defer src="../data/catalog.js"></script>
     <script defer src="../scripts/catalogList.js"></script>
     <script defer src="../scripts/showModal.js"></script>
+    <script defer src="../scripts/showCart.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -50,13 +51,17 @@
               </div>
               <div class="header-block__box__services">
                 <a
-                  class="header-block__box__services__link"
+                  class="services-link cart-btn"
+                  id="cartBtn"
                   href="../pages/cart.html"
-                  ><img src="../assets/icons/cart.png" alt="cart"
-                /></a>
-                <a class="header-block__box__services__link" href="#"
-                  ><img src="../assets/icons/user.png" alt="user"
-                /></a>
+                  title="Cart"
+                  target="_blank"
+                  ><img src="../assets/icons/cart.png" alt="cart" />
+                  <div class="cart-num" id="cartBtnNum">0</div></a
+                >
+                <a class="services-link" href="#"
+                  ><img src="../assets/icons/user.png" alt="user" />
+                </a>
               </div>
             </div>
           </div>

@@ -488,7 +488,7 @@ body {
   box-sizing: border-box;
   justify-content: flex-end;
 }
-.wrapper .top header .header-block__box__services__link {
+.wrapper .top header .header-block__box__services .services-link {
   margin-right: 20px;
   display: flex;
   flex-direction: column;
@@ -502,6 +502,32 @@ body {
   letter-spacing: 0%;
   color: #22202e;
   cursor: pointer;
+}
+.wrapper .top header .header-block__box__services .cart-btn {
+  margin-right: 20px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  align-items: center;
+  cursor: pointer;
+}
+.wrapper .top header .header-block__box__services .cart-btn .cart-num {
+  position: absolute;
+  background-color: #eb9a21;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0%;
+  top: 10px;
 }
 .wrapper .top header nav {
   margin: 0 auto;

@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart</title>
     <link rel="stylesheet" href="../styles/cart/cart.css" />
+    <script defer src="../data/catalog.js"></script>
     <script src="../scripts/toOrder.js"></script>
+    <script defer src="../scripts/counter.js"></script>
+    <script defer src="../scripts/showCart.js"></script>
+    <script defer src="../scripts/cartList.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -48,13 +52,199 @@
               </div>
               <div class="header-block__box__services">
                 <a
-                  class="header-block__box__services__link"
+                  class="services-link cart-btn"
+                  id="cartBtn"
                   href="../pages/cart.html"
-                  ><img src="../assets/icons/cart.png" alt="cart"
+                  title="Cart"
+                  target="_blank"
+                  ><img src="../assets/icons/cart.png" alt="cart" />
+                  <div class="cart-num" id="cartBtnNum">0</div></a
+                >
+                <a class="services-link" href="#"
+                  ><img src="../assets/icons/user.png" alt="user" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <nav>
+            <div class="categories">
+              <a class="categories__link first" href="catalog.html"
+                >All products</a
+              >
+              <a class="categories__link" href="#">Plant pots</a>
+              <a class="categories__link" href="#">Ceramics</a>
+              <a class="categories__link" href="#">Tablets</a>
+              <a class="categories__link" href="#">Chairs</a>
+              <a class="categories__link" href="#">Crockery</a>
+              <a class="categories__link" href="#">Tableware</a>
+              <a class="categories__link" href="#">Cutlery</a>
+            </div>
+          </nav>
+        </header>
+        <main>
+          <section class="cart" name="cart">
+            <div class="cart-block" id="cartBlock">
+              <li class="crumbs">
+                <a class="crumbs__link" href="../index.html">Home /</a>
+                <a class="crumbs__link" href="cart.html">Cart /</a>
+              </li>
+              <div class="cart-heading">
+                <p class="cart-heading__content">Your shopping cart</p>
+              </div>
+              <li class="cart-titles">
+                <p class="cart-titles__point" href="#">Product</p>
+                <p class="cart-titles__point" href="#">Price</p>
+                <p class="cart-titles__point" href="#">Quantity</p>
+                <p class="cart-titles__point" href="#">Amount</p>
+                <p class="cart-titles__point" href="#"></p>
+              </li>
+              <div class="cart-list" id="cartList"></div>
+              <div class="cart-total">
+                <div class="total-block">
+                  <div class="total-input">
+                    <p class="total-label">Total amount:</p>
+                    <p class="total-value" id="cartCostTotal">0</p>
+                    <p class="total-currency">&euro;</p>
+                  </div>
+                  <p class="info">
+                    Taxes and shipping are calculated at checkout
+                  </p>
+                  <div class="total-button">
+                    <button class="button-apply" onclick="toOrder();">
+                      Go to checkout
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+      <footer>
+        <div class="footer-block">
+          <div class="footer-block__box">
+            <nav class="menu" name="menu">
+              <p class="menu__heading">Menu</p>
+              <a class="menu__link" href="#">New arrivals</a>
+              <a class="menu__link" href="#">Best sellers</a>
+              <a class="menu__link" href="#">Recently viewed</a>
+              <a class="menu__link" href="#">Popular this week</a>
+              <a class="menu__link" href="#">All products</a>
+            </nav>
+            <nav class="menu" name="categories">
+              <p class="menu__heading">Categories</p>
+              <a class="menu__link" href="#">Crockery</a>
+              <a class="menu__link" href="#">Furniture</a>
+              <a class="menu__link" href="#">Homeware</a>
+              <a class="menu__link" href="#">Plant pots</a>
+              <a class="menu__link" href="#">Chairs</a>
+              <a class="menu__link" href="#">Other</a>
+            </nav>
+            <nav class="menu" name="about">
+              <p class="menu__heading">Our company</p>
+              <a class="menu__link" href="about.html">About us</a>
+              <a class="menu__link" href="#">Vacancies</a>
+              <a class="menu__link" href="#">Contact us</a>
+              <a class="menu__link" href="#">Privacy</a>
+              <a class="menu__link" href="#">Returns policy</a>
+            </nav>
+            <section class="subscribe" name="subscribe">
+              <p class="subscribe__heading">Join our mailing list</p>
+              <div class="subscribe__input-box">
+                <input
+                  class="subscribe__input-box__input"
+                  type="email"
+                  placeholder="your@email.com"
+                />
+                <button class="subscribe__input-box__button">Sign up</button>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom__box">
+            <div class="footer-bottom__box__copyrights">
+              <p class="footer-bottom__box__copyrights__text">
+                &#169;&nbsp;Ihanaa LTD. All rights reserved
+              </p>
+            </div>
+            <div class="footer-bottom__box__socials">
+              <div class="socials-box">
+                <a class="socials-box__link" href="#"
+                  ><img src="../assets/icons/socials/linkedin.png" alt="in"
                 /></a>
-                <a class="header-block__box__services__link" href="#"
-                  ><img src="../assets/icons/user.png" alt="user"
+                <a class="socials-box__link" href="#"
+                  ><img src="../assets/icons/socials/facebook.png" alt="face"
                 /></a>
+                <a class="socials-box__link" href="#"
+                  ><img src="../assets/icons/socials/instagram.png" alt="inst"
+                /></a>
+                <a class="socials-box__link" href="#"
+                  ><img src="../assets/icons/socials/skype.png" alt="skype"
+                /></a>
+                <a class="socials-box__link" href="#"
+                  ><img src="../assets/icons/socials/twitter.png" alt="twit"
+                /></a>
+                <a class="socials-box__link" href="#"
+                  ><img src="../assets/icons/socials/pinterest.png" alt="pint"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- <div class="wrapper">
+      <div class="top">
+        <header>
+          <div class="header-block">
+            <div class="header-block__box">
+              <div class="header-block__box__search">
+                <div class="menu">
+                  <a class="menu__burger" href="#"
+                    ><img src="../assets/icons/burger.png" alt="burger"
+                  /></a>
+                  <div class="menu__content">
+                    <a class="menu__content__link" href="#">New arrivals</a>
+                    <a class="menu__content__link" href="#">Best sellers</a>
+                    <a class="menu__content__link" href="#">Recently viewed</a>
+                    <a class="menu__content__link" href="#"
+                      >Popular this week</a
+                    >
+                    <a class="menu__content__link last" href="catalog.html"
+                      >All products</a
+                    >
+                  </div>
+                </div>
+                <div class="search-box">
+                  <a class="search-box__link" href="#"
+                    ><img src="../assets/icons/search.png" alt="search"
+                  /></a>
+                  <input
+                    class="search-box__input"
+                    type="text"
+                    placeholder="Search"
+                  />
+                </div>
+              </div>
+              <div class="header-block__box__logo">
+                <a class="header-block__box__logo__image" href="../index.html"
+                  ><img src="../assets/logo/logo.png" alt="logo"
+                /></a>
+              </div>
+              <div class="header-block__box__services">
+                <a
+                  class="services-link cart-btn"
+                  id="cartBtn"
+                  href="../pages/cart.html"
+                  title="Cart"
+                  target="_blank"
+                  ><img src="../assets/icons/cart.png" alt="cart" />
+                  <div class="cart-num" id="cartBtnNum">0</div></a
+                >
+                <a class="services-link" href="#"
+                  ><img src="../assets/icons/user.png" alt="user" />
+                </a>
               </div>
             </div>
           </div>
@@ -313,6 +503,6 @@
           </div>
         </div>
       </footer>
-    </div>
+    </div> -->
   </body>
 </html>

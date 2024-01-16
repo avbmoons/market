@@ -134,7 +134,7 @@ header {
         height: 100%;
         @include flex-horizontal();
         justify-content: flex-end;
-        &__link {
+        .services-link {
           margin-right: 20px;
           @include flex-vertical();
           text-align: right;
@@ -142,6 +142,25 @@ header {
           @include text-font(14px, 400, 14px, 0%);
           color: $color-grey-dark;
           cursor: pointer;
+        }
+        .cart-btn {
+          margin-right: 20px;
+          height: auto;
+          @include flex-horizontal();
+          align-items: center;
+          cursor: pointer;
+          .cart-num {
+            position: absolute;
+            background-color: $color-orange;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            @include flex-horizontal();
+            align-items: center;
+            color: $color-white;
+            @include text-font(14px, 500, 14px, 0%);
+            top: 10px;
+          }
         }
       }
     }

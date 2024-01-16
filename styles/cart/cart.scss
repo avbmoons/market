@@ -149,7 +149,7 @@ body {
             height: 100%;
             @include flex-horizontal();
             justify-content: flex-end;
-            &__link {
+            .services-link {
               margin-right: 20px;
               @include flex-vertical();
               text-align: right;
@@ -157,6 +157,25 @@ body {
               @include text-font(14px, 400, 14px, 0%);
               color: $color-grey-dark;
               cursor: pointer;
+            }
+            .cart-btn {
+              margin-right: 20px;
+              height: auto;
+              @include flex-horizontal();
+              align-items: center;
+              cursor: pointer;
+              .cart-num {
+                position: absolute;
+                background-color: $color-orange;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                @include flex-horizontal();
+                align-items: center;
+                color: $color-white;
+                @include text-font(14px, 500, 14px, 0%);
+                top: 10px;
+              }
             }
           }
         }
@@ -205,7 +224,7 @@ body {
         min-height: $section-height * $coeff;
         @include flex-horizontal();
         justify-content: space-between;
-        &__block {
+        .cart-block {
           width: 100%;
           height: fit-content;
           @include flex-vertical();
@@ -229,7 +248,7 @@ body {
               font-weight: 400;
             }
           }
-          &__heading {
+          .cart-heading {
             margin: 0 auto;
             margin-top: 40px;
             margin-bottom: 20px;
@@ -245,7 +264,7 @@ body {
               text-align: left;
             }
           }
-          &__titles {
+          .cart-titles {
             margin: 0 auto;
             margin-top: 40px;
             width: 100%;
@@ -275,7 +294,7 @@ body {
               text-align: right;
             }
           }
-          &__items {
+          .cart-list {
             margin: 0 auto;
             margin-top: 10px;
             margin-bottom: 40px;
@@ -283,21 +302,21 @@ body {
             height: fit-content;
             @include flex-vertical();
             justify-content: center;
-            &__item {
+            .cart-item {
               margin: 0 auto;
               margin-top: 10px;
               width: 100%;
               height: $cart-item-height;
               @include flex-horizontal();
               justify-content: space-between;
-              //border: 1px solid $color-grey-light;
+              border: 1px solid $color-grey-middle;
               border-radius: 2px;
-              &__product {
+              .product-box {
                 width: 40%;
                 height: inherit;
                 @include flex-horizontal();
                 justify-content: flex-start;
-                &__image {
+                .image-box {
                   margin: 0;
                   height: $cart-item-height;
                   @include flex-vertical();
@@ -305,7 +324,7 @@ body {
                     height: $cart-item-height;
                   }
                 }
-                &__name-box {
+                .name-box {
                   margin: 0;
                   margin-left: 10px;
                   width: auto;
@@ -324,30 +343,54 @@ body {
                 }
               }
 
-              &__price-box {
+              .price-box {
                 margin: 0 auto;
                 width: 15%;
                 height: inherit;
                 @include flex-vertical();
                 @include text-font(20px, 300, 20px, 0%);
                 color: $color-grey-dark;
-                &__origin {
+                .price-origin-box {
+                  margin: 0 auto;
                   width: 100%;
-                  @include text-font(18px, 400, 18px, 0%);
-                  font-style: italic;
-                  text-decoration: line-through;
-                  text-align: center;
-                  color: $color-grey-middle;
-                  display: none;
+                  @include flex-horizontal();
+                  //display: none;
+                  .price-origin {
+                    //margin: 0 auto;
+                    @include text-font(18px, 300, 18px, 0%);
+                    font-style: italic;
+                    text-decoration: line-through;
+                    text-align: center;
+                    color: $color-grey;
+                  }
+                  .currency {
+                    //margin: 0 auto;
+                    margin-left: 10px;
+                    @include text-font(18px, 300, 18px, 0%);
+                    font-style: italic;
+                    text-decoration: line-through;
+                    text-align: center;
+                    color: $color-grey;
+                  }
                 }
-                &__active {
+                .price-active-box {
+                  margin: 0 auto;
                   width: 100%;
-                  @include text-font(20px, 300, 20px, 0%);
-                  text-align: center;
-                  color: $color-grey-dark;
+                  @include flex-horizontal();
+                  .price-active {
+                    @include text-font(20px, 400, 20px, 0%);
+                    text-align: center;
+                    color: $color-grey-dark;
+                  }
+                  .currency {
+                    margin-left: 10px;
+                    @include text-font(20px, 400, 20px, 0%);
+                    text-align: center;
+                    color: $color-grey-dark;
+                  }
                 }
               }
-              &__counter-box {
+              .counter-box {
                 margin: 0 auto;
                 width: 20%;
                 height: inherit;
@@ -358,15 +401,15 @@ body {
                   height: fit-content;
                   vertical-align: middle;
                   @include flex-horizontal();
-                  &__minus {
+                  .counter-minus {
                     width: 25%;
-                    @include text-font(20px, 300, 20px, 0%);
+                    @include text-font(22px, 300, 22px, 0%);
                     color: $color-grey-dark;
                     background: none;
                     border: none;
                     cursor: pointer;
                   }
-                  &__value {
+                  .counter-value {
                     width: 50%;
                     @include text-font(20px, 300, 20px, 0%); // font-mix();
                     text-align: center;
@@ -374,50 +417,89 @@ body {
                     //background-color: $color-background;
                     border: none;
                   }
-                  &__plus {
+                  .counter-plus {
                     width: 25%;
-                    @include text-font(20px, 300, 20px, 0%);
+                    @include text-font(22px, 300, 22px, 0%);
                     color: $color-grey-dark;
                     background: none;
                     border: none;
                     cursor: pointer;
                   }
+                  .counter-minus:hover {
+                    color: $color-orange;
+                  }
+                  .counter-plus:hover {
+                    color: $color-orange;
+                  }
                 }
               }
 
-              &__total-box {
+              .total-box {
                 margin: 0 auto;
                 width: 20%;
                 height: inherit;
                 @include flex-vertical();
                 @include text-font(20px, 300, 20px, 0%);
                 color: $color-grey-dark;
-                &__origin {
-                  padding-right: 10px;
-                  @include text-font(18px, 400, 18px, 0%);
-                  font-style: italic;
-                  text-decoration: line-through;
-                  text-align: right;
-                  color: $color-grey-middle;
-                  display: none;
+                .total-origin-box {
+                  margin: 0 auto;
+                  width: 100%;
+                  @include flex-horizontal();
+                  justify-content: flex-end;
+                  //display: none;
+                  .total-origin {
+                    padding-right: 10px;
+                    @include text-font(18px, 300, 18px, 0%);
+                    font-style: italic;
+                    text-decoration: line-through;
+                    text-align: right;
+                    color: $color-grey;
+                  }
+                  .currency {
+                    padding-right: 10px;
+                    @include text-font(18px, 300, 18px, 0%);
+                    font-style: italic;
+                    text-decoration: line-through;
+                    text-align: right;
+                    color: $color-grey;
+                  }
                 }
-                &__active {
-                  padding-right: 10px;
-                  @include text-font(18px, 400, 18px, 0%); // font-price();
-                  text-align: right;
-                  color: $color-grey-dark;
+                .total-active-box {
+                  margin: 0 auto;
+                  width: 100%;
+                  @include flex-horizontal();
+                  justify-content: flex-end;
+                  .total-active {
+                    padding-right: 10px;
+                    @include text-font(18px, 400, 18px, 0%); // font-price();
+                    text-align: right;
+                    color: $color-grey-dark;
+                  }
+                  .currency {
+                    padding-right: 10px;
+                    @include text-font(18px, 400, 18px, 0%); // font-price();
+                    text-align: right;
+                    color: $color-grey-dark;
+                  }
                 }
               }
-              &__button-box {
+              .button-box {
                 margin: 0 auto;
                 width: 5%;
                 height: 100%;
                 @include flex-vertical();
                 @include text-font(20px, 300, 20px, 0%);
                 color: $color-grey-dark;
+                .button-show {
+                  margin: 0 auto;
+                  padding: 0;
+                  height: auto;
+                  background: none;
+                  border: none;
+                  cursor: pointer;
+                }
                 .button-delete {
                   margin: 0 auto;
-                  margin-bottom: 5px;
                   padding: 0;
                   height: auto;
                   background: none;
@@ -430,7 +512,7 @@ body {
               margin-left: 0;
             }
           }
-          &__total {
+          .cart-total {
             margin: 0 auto;
             margin-top: 40px;
             margin-bottom: 40px;
@@ -438,24 +520,24 @@ body {
             min-height: $input-height;
             @include flex-horizontal();
             justify-content: flex-end;
-            &__block {
+            .total-block {
               margin: 0;
               width: 35%;
               min-height: $input-height;
               @include flex-vertical();
-              &__input {
+              .total-input {
                 margin: 0;
                 width: 100%; // auto;
                 height: fit-content;
                 @include flex-horizontal();
                 justify-content: flex-end;
                 align-items: flex-end;
-                &__label {
+                .total-label {
                   margin-right: 20px;
                   @include text-font(18px, 300, 18px, 0%);
                   color: $color-grey-dark;
                 }
-                &__value {
+                .total-value {
                   margin-top: 10px;
                   padding: 0;
                   height: fit-content;
@@ -464,7 +546,7 @@ body {
                   color: $color-grey-dark;
                   border: none;
                 }
-                &__currency {
+                .total-currency {
                   margin-left: 10px;
                   @include text-font(20px, 400, 20px, 0%);
                   font-weight: 300;
@@ -477,7 +559,7 @@ body {
                 color: $color-primary;
                 text-align: right;
               }
-              &__button {
+              .total-button {
                 margin: 0;
                 margin-top: 20px;
                 width: 100%;
@@ -485,7 +567,7 @@ body {
                 @include flex-horizontal();
                 justify-content: flex-end;
                 align-self: flex-end;
-                &__apply {
+                .button-apply {
                   padding: 0 20px 0 20px;
                   width: fit-content;
                   height: $button-height;
@@ -627,3 +709,654 @@ body {
     }
   }
 }
+// .wrapper {
+//   margin: 0 auto;
+//   width: $site-width;
+//   min-height: $site-height;
+//   @include flex-vertical();
+//   justify-content: space-between;
+//   .top {
+//     margin: 0 auto;
+//     width: $site-width;
+//     height: auto;
+//     @include flex-vertical();
+//     justify-content: flex-start;
+//     flex-grow: 1;
+//     header {
+//       margin: 0 auto;
+//       width: 100%;
+//       height: $header-height;
+//       @include flex-vertical();
+//       justify-content: space-between;
+//       background-color: $color-white;
+//       .header-block {
+//         margin: 0 auto;
+//         width: 100%;
+//         height: 50%;
+//         @include flex-vertical();
+//         border-bottom: 1px solid $color-grey-light;
+//         &__box {
+//           margin: 0 auto;
+//           width: 100%;
+//           height: 40%;
+//           @include flex-horizontal();
+//           &__search {
+//             margin: 0 auto;
+//             width: 40%;
+//             height: 100%;
+//             @include flex-horizontal();
+//             justify-content: flex-start;
+//             .menu {
+//               margin-left: 20px;
+//               @include flex-vertical();
+//               position: relative;
+//               &__burger {
+//                 @include flex-vertical();
+//                 text-align: right;
+//                 text-decoration: none;
+//                 @include text-font(14px, 400, 14px, 0%);
+//                 color: $color-grey-dark;
+//                 cursor: pointer;
+//               }
+//               &__content {
+//                 margin: 0;
+//                 margin-top: 5px;
+//                 width: 200px;
+//                 position: absolute;
+//                 left: -5px;
+//                 top: 20px;
+//                 @include flex-vertical();
+//                 display: none;
+//                 border: none;
+//                 &__link {
+//                   margin-top: 10px;
+//                   text-decoration: none;
+//                   text-align: left;
+//                   @include text-font(14px, 300, 14px, 0%);
+//                   color: $color-primary-dark;
+//                 }
+//                 .last {
+//                   margin-bottom: 20px;
+//                 }
+//                 &__link:hover {
+//                   font-weight: 400;
+//                   color: $color-grey;
+//                 }
+//               }
+//               &__burger:hover &__content {
+//                 display: block;
+//               }
+//             }
+//             .menu:hover .menu__content {
+//               @include flex-vertical();
+//               display: inline-flex;
+//             }
+//             .search-box {
+//               margin-left: 20px;
+//               width: 80%;
+//               @include flex-horizontal();
+//               justify-content: space-between;
+//               position: relative;
+//               &__link {
+//                 //margin: 0;
+//                 //margin-left: 20px;
+//                 @include flex-vertical();
+//                 text-align: right;
+//                 text-decoration: none;
+//                 @include text-font(14px, 400, 14px, 0%);
+//                 color: $color-grey-dark;
+//                 cursor: pointer;
+//               }
+//               &__input {
+//                 margin: 0 auto;
+//                 margin-left: 20px;
+//                 padding-left: 10px;
+//                 position: absolute;
+//                 top: 0;
+//                 left: 0;
+//                 width: 90%;
+//                 height: 100%;
+//                 outline: $color-grey-light;
+//                 display: none;
+//               }
+//               &__input:focus {
+//                 border: 1px solid $color-grey;
+//                 background-color: $color-grey-light;
+//                 outline: $color-grey;
+//                 display: block;
+//               }
+//             }
+//             .search-box:hover .search-box__input {
+//               display: inline-flex;
+//             }
+//           }
+//           &__logo {
+//             margin: 0 auto;
+//             width: 20%;
+//             height: 100%;
+//             @include flex-vertical();
+//             cursor: pointer;
+//             &__image {
+//               margin: 0 auto;
+//               height: auto;
+//             }
+//           }
+//           &__services {
+//             margin: auto;
+//             width: 40%;
+//             height: 100%;
+//             @include flex-horizontal();
+//             justify-content: flex-end;
+//             .services-link {
+//               margin-right: 20px;
+//               @include flex-vertical();
+//               text-align: right;
+//               text-decoration: none;
+//               @include text-font(14px, 400, 14px, 0%);
+//               color: $color-grey-dark;
+//               cursor: pointer;
+//             }
+//             .cart-btn {
+//               margin-right: 20px;
+//               height: auto;
+//               @include flex-horizontal();
+//               align-items: center;
+//               cursor: pointer;
+//               .cart-num {
+//                 position: absolute;
+//                 background-color: $color-orange;
+//                 width: 16px;
+//                 height: 16px;
+//                 border-radius: 50%;
+//                 @include flex-horizontal();
+//                 align-items: center;
+//                 color: $color-white;
+//                 @include text-font(14px, 500, 14px, 0%);
+//                 top: 10px;
+//               }
+//             }
+//           }
+//           // &__services {
+//           //   margin: auto;
+//           //   width: 40%;
+//           //   height: 100%;
+//           //   @include flex-horizontal();
+//           //   justify-content: flex-end;
+//           //   &__link {
+//           //     margin-right: 20px;
+//           //     @include flex-vertical();
+//           //     text-align: right;
+//           //     text-decoration: none;
+//           //     @include text-font(14px, 400, 14px, 0%);
+//           //     color: $color-grey-dark;
+//           //     cursor: pointer;
+//           //   }
+//           // }
+//         }
+//       }
+//       nav {
+//         margin: 0 auto;
+//         width: 100%;
+//         height: 48%; // 50%;
+//         @include flex-vertical();
+//         .categories {
+//           margin: 0 auto;
+//           width: 100%;
+//           height: 30%;
+//           @include flex-horizontal();
+//           &__link {
+//             margin-left: 20px;
+//             @include flex-vertical();
+//             text-decoration: none;
+//             text-align: center;
+//             @include text-font(16px, 300, 16px, 0%);
+//             color: $color-grey-dark;
+//             cursor: pointer;
+//           }
+//           &__link:hover {
+//             color: $color-grey;
+//             font-weight: 400;
+//           }
+//           .first {
+//             margin-left: 0;
+//             color: $color-primary;
+//           }
+//         }
+//       }
+//     }
+//     main {
+//       margin: 0 auto;
+//       width: $site-width;
+//       min-height: $section-height;
+//       @include flex-vertical();
+//       justify-content: flex-start;
+//       background-color: $color-white;
+//       .cart {
+//         margin: 0 auto;
+//         margin-top: 40px;
+//         width: $block-width;
+//         min-height: $section-height * $coeff;
+//         @include flex-horizontal();
+//         justify-content: space-between;
+//         &__block {
+//           width: 100%;
+//           height: fit-content;
+//           @include flex-vertical();
+//           .crumbs {
+//             margin: 0;
+//             max-width: $block-width;
+//             @include flex-horizontal();
+//             justify-content: flex-start;
+//             flex-wrap: wrap;
+//             &__link {
+//               //margin-left: 10px;
+//               text-decoration: none;
+//               text-align: left;
+//               @include text-font(14px, 300, 14px, 0%);
+//               color: $color-grey-dark;
+//             }
+//             &__link:hover {
+//               text-decoration: underline;
+//             }
+//             &__link:last-child {
+//               font-weight: 400;
+//             }
+//           }
+//           &__heading {
+//             margin: 0 auto;
+//             margin-top: 40px;
+//             margin-bottom: 20px;
+//             width: 100%;
+//             height: fit-content;
+//             @include flex-vertical();
+//             justify-content: flex-start;
+//             &__content {
+//               margin: 0 auto;
+//               width: 100%;
+//               @include text-font(18px, 400, 18px, 0%);
+//               color: $color-primary-dark;
+//               text-align: left;
+//             }
+//           }
+//           &__titles {
+//             margin: 0 auto;
+//             margin-top: 40px;
+//             width: 100%;
+//             @include flex-horizontal();
+//             justify-content: flex-end;
+//             &__point {
+//               color: $color-grey-dark;
+//             }
+//             &__point:first-child {
+//               width: 40%;
+//             }
+//             &__point:nth-child(2) {
+//               width: 15%;
+//               text-align: center;
+//             }
+//             &__point:nth-child(3) {
+//               width: 20%;
+//               text-align: center;
+//             }
+//             &__point:nth-child(4) {
+//               padding-right: 10px;
+//               width: 20%;
+//               text-align: right;
+//             }
+//             &__point:last-child {
+//               width: 5%;
+//               text-align: right;
+//             }
+//           }
+//           &__items {
+//             margin: 0 auto;
+//             margin-top: 10px;
+//             margin-bottom: 40px;
+//             width: 100%;
+//             height: fit-content;
+//             @include flex-vertical();
+//             justify-content: center;
+//             &__item {
+//               margin: 0 auto;
+//               margin-top: 10px;
+//               width: 100%;
+//               height: $cart-item-height;
+//               @include flex-horizontal();
+//               justify-content: space-between;
+//               //border: 1px solid $color-grey-light;
+//               border-radius: 2px;
+//               &__product {
+//                 width: 40%;
+//                 height: inherit;
+//                 @include flex-horizontal();
+//                 justify-content: flex-start;
+//                 &__image {
+//                   margin: 0;
+//                   height: $cart-item-height;
+//                   @include flex-vertical();
+//                   img {
+//                     height: $cart-item-height;
+//                   }
+//                 }
+//                 &__name-box {
+//                   margin: 0;
+//                   margin-left: 10px;
+//                   width: auto;
+//                   @include flex-vertical();
+//                   &__name {
+//                     @include text-font(20px, 400, 20px, 0%);
+//                     text-align: left;
+//                     color: $color-grey-dark;
+//                   }
+//                   &__resume {
+//                     margin-top: 10px;
+//                     @include text-font(14px, 300, 14px, 0%);
+//                     text-align: left;
+//                     color: $color-grey-dark;
+//                   }
+//                 }
+//               }
+
+//               &__price-box {
+//                 margin: 0 auto;
+//                 width: 15%;
+//                 height: inherit;
+//                 @include flex-vertical();
+//                 @include text-font(20px, 300, 20px, 0%);
+//                 color: $color-grey-dark;
+//                 &__origin {
+//                   width: 100%;
+//                   @include text-font(18px, 400, 18px, 0%);
+//                   font-style: italic;
+//                   text-decoration: line-through;
+//                   text-align: center;
+//                   color: $color-grey-middle;
+//                   display: none;
+//                 }
+//                 &__active {
+//                   width: 100%;
+//                   @include text-font(20px, 300, 20px, 0%);
+//                   text-align: center;
+//                   color: $color-grey-dark;
+//                 }
+//               }
+//               &__counter-box {
+//                 margin: 0 auto;
+//                 width: 20%;
+//                 height: inherit;
+//                 @include flex-vertical();
+//                 .counter {
+//                   margin: 0 auto;
+//                   width: 75%;
+//                   height: fit-content;
+//                   vertical-align: middle;
+//                   @include flex-horizontal();
+//                   &__minus {
+//                     width: 25%;
+//                     @include text-font(20px, 300, 20px, 0%);
+//                     color: $color-grey-dark;
+//                     background: none;
+//                     border: none;
+//                     cursor: pointer;
+//                   }
+//                   &__value {
+//                     width: 50%;
+//                     @include text-font(20px, 300, 20px, 0%); // font-mix();
+//                     text-align: center;
+//                     color: $color-grey-dark;
+//                     //background-color: $color-background;
+//                     border: none;
+//                   }
+//                   &__plus {
+//                     width: 25%;
+//                     @include text-font(20px, 300, 20px, 0%);
+//                     color: $color-grey-dark;
+//                     background: none;
+//                     border: none;
+//                     cursor: pointer;
+//                   }
+//                 }
+//               }
+
+//               &__total-box {
+//                 margin: 0 auto;
+//                 width: 20%;
+//                 height: inherit;
+//                 @include flex-vertical();
+//                 @include text-font(20px, 300, 20px, 0%);
+//                 color: $color-grey-dark;
+//                 &__origin {
+//                   padding-right: 10px;
+//                   @include text-font(18px, 400, 18px, 0%);
+//                   font-style: italic;
+//                   text-decoration: line-through;
+//                   text-align: right;
+//                   color: $color-grey-middle;
+//                   display: none;
+//                 }
+//                 &__active {
+//                   padding-right: 10px;
+//                   @include text-font(18px, 400, 18px, 0%); // font-price();
+//                   text-align: right;
+//                   color: $color-grey-dark;
+//                 }
+//               }
+//               &__button-box {
+//                 margin: 0 auto;
+//                 width: 5%;
+//                 height: 100%;
+//                 @include flex-vertical();
+//                 @include text-font(20px, 300, 20px, 0%);
+//                 color: $color-grey-dark;
+//                 .button-delete {
+//                   margin: 0 auto;
+//                   margin-bottom: 5px;
+//                   padding: 0;
+//                   height: auto;
+//                   background: none;
+//                   border: none;
+//                   cursor: pointer;
+//                 }
+//               }
+//             }
+//             .first {
+//               margin-left: 0;
+//             }
+//           }
+//           &__total {
+//             margin: 0 auto;
+//             margin-top: 40px;
+//             margin-bottom: 40px;
+//             width: 100%;
+//             min-height: $input-height;
+//             @include flex-horizontal();
+//             justify-content: flex-end;
+//             &__block {
+//               margin: 0;
+//               width: 35%;
+//               min-height: $input-height;
+//               @include flex-vertical();
+//               &__input {
+//                 margin: 0;
+//                 width: 100%; // auto;
+//                 height: fit-content;
+//                 @include flex-horizontal();
+//                 justify-content: flex-end;
+//                 align-items: flex-end;
+//                 &__label {
+//                   margin-right: 20px;
+//                   @include text-font(18px, 300, 18px, 0%);
+//                   color: $color-grey-dark;
+//                 }
+//                 &__value {
+//                   margin-top: 10px;
+//                   padding: 0;
+//                   height: fit-content;
+//                   @include text-font(20px, 400, 20px, 0%);
+//                   text-align: right;
+//                   color: $color-grey-dark;
+//                   border: none;
+//                 }
+//                 &__currency {
+//                   margin-left: 10px;
+//                   @include text-font(20px, 400, 20px, 0%);
+//                   font-weight: 300;
+//                   color: $color-grey-dark;
+//                 }
+//               }
+//               .info {
+//                 margin-top: 20px;
+//                 @include text-font(12px, 400, 12px, 0%);
+//                 color: $color-primary;
+//                 text-align: right;
+//               }
+//               &__button {
+//                 margin: 0;
+//                 margin-top: 20px;
+//                 width: 100%;
+//                 min-height: $button-height;
+//                 @include flex-horizontal();
+//                 justify-content: flex-end;
+//                 align-self: flex-end;
+//                 &__apply {
+//                   padding: 0 20px 0 20px;
+//                   width: fit-content;
+//                   height: $button-height;
+//                   @include text-font(20px, 300, 20px, 0%);
+//                   color: $color-white;
+//                   background-color: $color-primary-dark;
+//                   border: none;
+//                   cursor: pointer;
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+//   footer {
+//     margin: 0 auto;
+//     width: 100%;
+//     height: $footer-height;
+//     @include flex-vertical();
+//     background-color: $color-primary-dark;
+//     .footer-block {
+//       margin: 0 auto;
+//       width: 100%;
+//       height: 80%;
+//       @include flex-vertical();
+//       border-bottom: 1px solid $color-grey;
+//       &__box {
+//         margin: 0 auto;
+//         width: $block-width;
+//         height: 70%;
+//         @include flex-horizontal();
+//         .menu {
+//           margin: 0 auto;
+//           width: 20%;
+//           height: 100%;
+//           @include flex-vertical();
+//           justify-content: flex-start;
+//           &__heading {
+//             @include text-font(16px, 300, 16px, 5%);
+//             color: $color-white;
+//           }
+//           &__link {
+//             margin-top: 10px;
+//             text-align: left;
+//             text-decoration: none;
+//             @include text-font(14px, 300, 14px, 0%);
+//             color: $color-white;
+//           }
+//         }
+//         .subscribe {
+//           width: 40%;
+//           height: 100%;
+//           @include flex-vertical();
+//           justify-content: flex-start;
+//           &__heading {
+//             @include text-font(16px, 300, 16px, 5%);
+//             color: $color-white;
+//           }
+//           &__input-box {
+//             margin-top: 10px;
+//             width: 100%;
+//             height: $input-height;
+//             @include flex-horizontal();
+//             &__input {
+//               width: 80%;
+//               padding-left: 10px;
+//               @include text-font(16px, 300, 16px, 5%);
+//               color: $color-grey-light;
+//               background-color: $color-primary;
+//               border: $color-primary-dark;
+//             }
+//             &__input:focus {
+//               border: none;
+//               outline: $color-primary-dark;
+//               color: $color-primary-dark;
+//               background-color: $color-grey-light;
+//             }
+//             &__button {
+//               width: 20%;
+//               @include text-font(16px, 300, 16px, 5%);
+//               color: $color-primary-dark;
+//               background-color: $color-white;
+//               border: 1px solid $color-primary-dark;
+//               cursor: pointer;
+//             }
+//             &__button:hover {
+//               background-color: $color-grey-middle;
+//             }
+//             &__button:focus {
+//               background-color: $color-grey-middle;
+//             }
+//           }
+//         }
+//       }
+//     }
+//     .footer-bottom {
+//       margin: 0 auto;
+//       width: 100%;
+//       height: 20%;
+//       @include flex-vertical();
+//       &__box {
+//         margin: 0 auto;
+//         width: $block-width;
+//         height: 40%;
+//         @include flex-horizontal();
+//         justify-content: space-between;
+//         &__copyrights {
+//           @include flex-vertical();
+//           &__text {
+//             margin: 0 auto;
+//             @include text-font(14px, 300, 14px, 0%);
+//             color: $color-white;
+//           }
+//         }
+//         &__socials {
+//           @include flex-vertical();
+//           .socials-box {
+//             margin: 0 auto;
+//             @include flex-horizontal();
+//             &__link {
+//               margin: 0 auto;
+//               margin-left: 10px;
+//               @include flex-vertical();
+//               img {
+//                 margin: 0 auto;
+//               }
+//               img:hover {
+//                 background-color: $color-grey;
+//               }
+//             }
+//             &__link:active {
+//               background-color: $color-grey;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
