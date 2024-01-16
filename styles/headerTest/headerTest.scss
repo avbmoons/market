@@ -1,0 +1,197 @@
+@use "sass:math";
+
+@import "../vars/vars.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+}
+
+header {
+  margin: 0 auto;
+  width: 100%;
+  height: $header-height;
+  @include flex-vertical();
+  justify-content: space-between;
+  background-color: $color-white;
+  .header-block {
+    margin: 0 auto;
+    width: 100%;
+    height: 50%;
+    @include flex-vertical();
+    border-bottom: 1px solid $color-grey-light;
+    &__box {
+      margin: 0 auto;
+      width: 100%;
+      height: 40%;
+      @include flex-horizontal();
+      &__search {
+        margin: 0 auto;
+        width: 40%;
+        height: 100%;
+        @include flex-horizontal();
+        justify-content: flex-start;
+        .menu {
+          margin-left: 20px;
+          @include flex-vertical();
+          position: relative;
+          &__burger {
+            @include flex-vertical();
+            text-align: right;
+            text-decoration: none;
+            @include text-font(14px, 400, 14px, 0%);
+            color: $color-grey-dark;
+            cursor: pointer;
+          }
+          &__content {
+            margin: 0;
+            margin-top: 5px;
+            width: 200px;
+            position: absolute;
+            left: -5px;
+            top: 20px;
+            @include flex-vertical();
+            display: none;
+            border: none;
+            &__link {
+              margin-top: 10px;
+              text-decoration: none;
+              text-align: left;
+              @include text-font(14px, 300, 14px, 0%);
+              color: $color-primary-dark;
+            }
+            .last {
+              margin-bottom: 20px;
+            }
+            &__link:hover {
+              font-weight: 400;
+              color: $color-grey;
+            }
+          }
+          &__burger:hover &__content {
+            display: block;
+          }
+        }
+        .menu:hover .menu__content {
+          @include flex-vertical();
+          display: inline-flex;
+        }
+        .search-box {
+          margin-left: 20px;
+          width: 80%;
+          @include flex-horizontal();
+          justify-content: space-between;
+          position: relative;
+          &__link {
+            @include flex-vertical();
+            text-align: right;
+            text-decoration: none;
+            @include text-font(14px, 400, 14px, 0%);
+            color: $color-grey-dark;
+            cursor: pointer;
+          }
+          &__input {
+            margin: 0 auto;
+            margin-left: 20px;
+            padding-left: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 90%;
+            height: 100%;
+            outline: $color-grey-light;
+            display: none;
+          }
+          &__input:focus {
+            border: 1px solid $color-grey;
+            background-color: $color-grey-light;
+            outline: $color-grey;
+            display: block;
+          }
+        }
+        .search-box:hover .search-box__input {
+          display: inline-flex;
+        }
+      }
+      &__logo {
+        margin: 0 auto;
+        width: 20%;
+        height: 100%;
+        @include flex-vertical();
+        cursor: pointer;
+        &__image {
+          margin: 0 auto;
+          height: auto;
+        }
+      }
+      &__services {
+        margin: auto;
+        width: 40%;
+        height: 100%;
+        @include flex-horizontal();
+        justify-content: flex-end;
+        .services-link {
+          margin-right: 20px;
+          @include flex-vertical();
+          text-align: right;
+          text-decoration: none;
+          @include text-font(14px, 400, 14px, 0%);
+          color: $color-grey-dark;
+          cursor: pointer;
+        }
+        .cart-btn {
+          margin-right: 20px;
+          height: auto;
+          @include flex-horizontal();
+          align-items: center;
+          cursor: pointer;
+          .cart-num {
+            position: absolute;
+            background-color: $color-orange;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            @include flex-horizontal();
+            align-items: center;
+            color: $color-white;
+            @include text-font(14px, 500, 14px, 0%);
+            top: 10px;
+          }
+        }
+      }
+    }
+  }
+  nav {
+    margin: 0 auto;
+    width: 100%;
+    height: 48%; // 50%;
+    @include flex-vertical();
+    .categories {
+      margin: 0 auto;
+      width: 100%;
+      height: 30%;
+      @include flex-horizontal();
+      &__link {
+        margin-left: 20px;
+        @include flex-vertical();
+        text-decoration: none;
+        text-align: center;
+        @include text-font(16px, 300, 16px, 0%);
+        color: $color-grey-dark;
+        cursor: pointer;
+      }
+      &__link:hover {
+        color: $color-grey;
+        font-weight: 400;
+      }
+      .first {
+        margin-left: 0;
+        color: $color-primary;
+      }
+    }
+  }
+}
