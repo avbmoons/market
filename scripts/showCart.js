@@ -154,9 +154,15 @@ myCart.products = cardAddArr.forEach((cardAdd) => {
   });
 });
 
+const locPage = location.pathname.match(/[^/]*$/);
+//console.log(locPage[0]);
 ////функция перехода на страницу корзины
 const cartPage = function () {
-  window.location.href = "../pages/cart.html";
+  if (!(locPage == "index.html")) {
+    window.location.href = "../pages/cart.html";
+  } else {
+    window.location.href = "pages/cart.html";
+  }
   cartContainerFill();
 };
 
