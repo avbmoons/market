@@ -34,7 +34,8 @@ class CatalogItem {
     return `<div class="item-box">
       <img class="item-box__image"
         src="${this.image}"
-        alt="photo"/>
+        id="item-${this.id}"
+        alt="photo" title="${this.name}"/>
       <a class="item-box__heading" href="product.html">${this.name}</a>
       <div class="item-box__bottom-box">
         <div class="stores">

@@ -10,6 +10,7 @@
     <script defer src="../scripts/counter.js"></script>
     <script defer src="../scripts/showCart.js"></script>
     <script defer src="../scripts/cartList.js"></script>
+    <script defer src="../scripts/menuClose.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -19,24 +20,45 @@
             <div class="header-block__box">
               <div class="header-block__box__search">
                 <div class="menu">
-                  <a class="menu__burger" href="#"
-                    ><img src="../assets/icons/burger.png" alt="burger"
-                  /></a>
-                  <div class="menu__content">
-                    <a class="menu__content__link" href="#">New arrivals</a>
-                    <a class="menu__content__link" href="#">Best sellers</a>
-                    <a class="menu__content__link" href="#">Recently viewed</a>
-                    <a class="menu__content__link" href="#"
-                      >Popular this week</a
-                    >
-                    <a class="menu__content__link last" href="catalog.html"
+                  <button class="button-open" onclick="menuOpen();">
+                    <img src="../assets/icons/burger16.png" alt="burger" />
+                  </button>
+                  <div class="menu-content">
+                    <div class="menu-close">
+                      <button class="button-close" onclick="menuClose();">
+                        &#10006;
+                      </button>
+                    </div>
+                    <div class="search-mini-box">
+                      <input
+                        class="search-input"
+                        type="text"
+                        placeholder="Search"
+                      />
+                      <button class="search-button">
+                        <img src="../assets/icons/search16.png" alt="search" />
+                      </button>
+                      <input
+                        class="search-box__input"
+                        type="text"
+                        placeholder="Search"
+                      />
+                    </div>
+                    <a class="menu-item" href="../pages/catalog.html"
                       >All products</a
                     >
+                    <a class="menu-item" href="#">Plant pots</a>
+                    <a class="menu-item" href="#">Ceramics</a>
+                    <a class="menu-item" href="#">Tables</a>
+                    <a class="menu-item" href="#">Chairs</a>
+                    <a class="menu-item" href="#">Crockery</a>
+                    <a class="menu-item" href="#">Tableware</a>
+                    <a class="menu-item last" href="#">Cutlery</a>
                   </div>
                 </div>
                 <div class="search-box">
                   <a class="search-box__link" href="#"
-                    ><img src="../assets/icons/search.png" alt="search"
+                    ><img src="../assets/icons/search16.png" alt="search"
                   /></a>
                   <input
                     class="search-box__input"
@@ -57,18 +79,18 @@
                   href="../pages/cart.html"
                   title="Cart"
                   target="_blank"
-                  ><img src="../assets/icons/cart.png" alt="cart" />
+                  ><img src="../assets/icons/cart16.png" alt="cart" />
                   <div class="cart-num" id="cartBtnNum">0</div></a
                 >
                 <a class="services-link" href="#"
-                  ><img src="../assets/icons/user.png" alt="user" />
+                  ><img src="../assets/icons/user16.png" alt="user" />
                 </a>
               </div>
             </div>
           </div>
-          <nav>
+          <div class="categories-box">
             <div class="categories">
-              <a class="categories__link first" href="catalog.html"
+              <a class="categories__link first" href="../pages/catalog.html"
                 >All products</a
               >
               <a class="categories__link" href="#">Plant pots</a>
@@ -79,7 +101,7 @@
               <a class="categories__link" href="#">Tableware</a>
               <a class="categories__link" href="#">Cutlery</a>
             </div>
-          </nav>
+          </div>
         </header>
         <main>
           <section class="cart" name="cart">
@@ -194,315 +216,5 @@
         </div>
       </footer>
     </div>
-    <!-- <div class="wrapper">
-      <div class="top">
-        <header>
-          <div class="header-block">
-            <div class="header-block__box">
-              <div class="header-block__box__search">
-                <div class="menu">
-                  <a class="menu__burger" href="#"
-                    ><img src="../assets/icons/burger.png" alt="burger"
-                  /></a>
-                  <div class="menu__content">
-                    <a class="menu__content__link" href="#">New arrivals</a>
-                    <a class="menu__content__link" href="#">Best sellers</a>
-                    <a class="menu__content__link" href="#">Recently viewed</a>
-                    <a class="menu__content__link" href="#"
-                      >Popular this week</a
-                    >
-                    <a class="menu__content__link last" href="catalog.html"
-                      >All products</a
-                    >
-                  </div>
-                </div>
-                <div class="search-box">
-                  <a class="search-box__link" href="#"
-                    ><img src="../assets/icons/search.png" alt="search"
-                  /></a>
-                  <input
-                    class="search-box__input"
-                    type="text"
-                    placeholder="Search"
-                  />
-                </div>
-              </div>
-              <div class="header-block__box__logo">
-                <a class="header-block__box__logo__image" href="../index.html"
-                  ><img src="../assets/logo/logo.png" alt="logo"
-                /></a>
-              </div>
-              <div class="header-block__box__services">
-                <a
-                  class="services-link cart-btn"
-                  id="cartBtn"
-                  href="../pages/cart.html"
-                  title="Cart"
-                  target="_blank"
-                  ><img src="../assets/icons/cart.png" alt="cart" />
-                  <div class="cart-num" id="cartBtnNum">0</div></a
-                >
-                <a class="services-link" href="#"
-                  ><img src="../assets/icons/user.png" alt="user" />
-                </a>
-              </div>
-            </div>
-          </div>
-          <nav>
-            <div class="categories">
-              <a class="categories__link first" href="catalog.html"
-                >All products</a
-              >
-              <a class="categories__link" href="#">Plant pots</a>
-              <a class="categories__link" href="#">Ceramics</a>
-              <a class="categories__link" href="#">Tablets</a>
-              <a class="categories__link" href="#">Chairs</a>
-              <a class="categories__link" href="#">Crockery</a>
-              <a class="categories__link" href="#">Tableware</a>
-              <a class="categories__link" href="#">Cutlery</a>
-            </div>
-          </nav>
-        </header>
-        <main>
-          <section class="cart" name="cart">
-            <div class="cart__block">
-              <li class="crumbs">
-                <a class="crumbs__link" href="../index.html">Home /</a>
-                <a class="crumbs__link" href="cart.html">Cart /</a>
-              </li>
-              <div class="cart__block__heading">
-                <p class="cart__block__heading__content">Your shopping cart</p>
-              </div>
-              <li class="cart__block__titles">
-                <p class="cart__block__titles__point" href="#">Product</p>
-                <p class="cart__block__titles__point" href="#">Price</p>
-                <p class="cart__block__titles__point" href="#">Quantity</p>
-                <p class="cart__block__titles__point" href="#">Amount</p>
-                <p class="cart__block__titles__point" href="#"></p>
-              </li>
-              <div class="cart__block__items">
-                <div class="cart__block__items__item">
-                  <div class="cart__block__items__item__product">
-                    <div class="cart__block__items__item__product__image">
-                      <img src="../assets/catalog/item-11.png" alt="photo" />
-                    </div>
-                    <div class="cart__block__items__item__product__name-box">
-                      <p
-                        class="cart__block__items__item__product__name-box__name"
-                      >
-                        The Solars Chair
-                      </p>
-                      <p
-                        class="cart__block__items__item__product__name-box__resume"
-                      >
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Neque voluptatibus laboriosam rem
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="cart__block__items__item__price-box">
-                    <p class="cart__block__items__item__price-box__origin">
-                      135&nbsp;&euro;
-                    </p>
-                    <p class="cart__block__items__item__price-box__active">
-                      135&nbsp;&euro;
-                    </p>
-                  </div>
-                  <div class="cart__block__items__item__counter-box">
-                    <div class="counter">
-                      <button class="counter__minus">-</button>
-                      <input class="counter__value" type="text" value="2" />
-                      <button class="counter__plus">+</button>
-                    </div>
-                  </div>
-                  <div class="cart__block__items__item__total-box">
-                    <p class="cart__block__items__item__total-box__origin">
-                      270&nbsp;&euro;
-                    </p>
-                    <p class="cart__block__items__item__total-box__active">
-                      270&nbsp;&euro;
-                    </p>
-                  </div>
-                  <div class="cart__block__items__item__button-box">
-                    <button class="button-delete">
-                      <img
-                        src="../assets/icons/see.png"
-                        alt="see doc"
-                        title="See product"
-                      />
-                    </button>
-                    <button class="button-delete">
-                      <img
-                        src="../assets/icons/delete.png"
-                        alt="delete"
-                        title="Delete"
-                      />
-                    </button>
-                  </div>
-                </div>
-                <div class="cart__block__items__item">
-                  <div class="cart__block__items__item__product">
-                    <div class="cart__block__items__item__product__image">
-                      <img src="../assets/catalog/item-3.png" alt="photo" />
-                    </div>
-                    <div class="cart__block__items__item__product__name-box">
-                      <p
-                        class="cart__block__items__item__product__name-box__name"
-                      >
-                        The Silky Vase
-                      </p>
-                      <p
-                        class="cart__block__items__item__product__name-box__resume"
-                      >
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Neque voluptatibus laboriosam rem
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="cart__block__items__item__price-box">
-                    <p class="cart__block__items__item__price-box__origin">
-                      125&nbsp;&euro;
-                    </p>
-                    <p class="cart__block__items__item__price-box__active">
-                      125&nbsp;&euro;
-                    </p>
-                  </div>
-                  <div class="cart__block__items__item__counter-box">
-                    <div class="counter">
-                      <button class="counter__minus">-</button>
-                      <input class="counter__value" type="text" value="1" />
-                      <button class="counter__plus">+</button>
-                    </div>
-                  </div>
-                  <div class="cart__block__items__item__total-box">
-                    <p class="cart__block__items__item__total-box__origin">
-                      125&nbsp;&euro;
-                    </p>
-                    <p class="cart__block__items__item__total-box__active">
-                      125&nbsp;&euro;
-                    </p>
-                  </div>
-                  <div class="cart__block__items__item__button-box">
-                    <button class="button-delete">
-                      <img
-                        src="../assets/icons/see.png"
-                        alt="see doc"
-                        title="See product"
-                      />
-                    </button>
-                    <button class="button-delete">
-                      <img
-                        src="../assets/icons/delete.png"
-                        alt="delete"
-                        title="Delete"
-                      />
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="cart__block__total">
-                <div class="cart__block__total__block">
-                  <div class="cart__block__total__block__input">
-                    <p class="cart__block__total__block__input__label">
-                      Subtotal:
-                    </p>
-                    <p class="cart__block__total__block__input__value">395</p>
-                    <p class="cart__block__total__block__input__currency">
-                      &euro;
-                    </p>
-                  </div>
-                  <p class="info">
-                    Taxes and shipping are calculated at checkout
-                  </p>
-                  <div class="cart__block__total__block__button">
-                    <button
-                      class="cart__block__total__block__button__apply"
-                      onclick="toOrder();"
-                    >
-                      Go to checkout
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </main>
-      </div>
-      <footer>
-        <div class="footer-block">
-          <div class="footer-block__box">
-            <nav class="menu" name="menu">
-              <p class="menu__heading">Menu</p>
-              <a class="menu__link" href="#">New arrivals</a>
-              <a class="menu__link" href="#">Best sellers</a>
-              <a class="menu__link" href="#">Recently viewed</a>
-              <a class="menu__link" href="#">Popular this week</a>
-              <a class="menu__link" href="#">All products</a>
-            </nav>
-            <nav class="menu" name="categories">
-              <p class="menu__heading">Categories</p>
-              <a class="menu__link" href="#">Crockery</a>
-              <a class="menu__link" href="#">Furniture</a>
-              <a class="menu__link" href="#">Homeware</a>
-              <a class="menu__link" href="#">Plant pots</a>
-              <a class="menu__link" href="#">Chairs</a>
-              <a class="menu__link" href="#">Other</a>
-            </nav>
-            <nav class="menu" name="about">
-              <p class="menu__heading">Our company</p>
-              <a class="menu__link" href="about.html">About us</a>
-              <a class="menu__link" href="#">Vacancies</a>
-              <a class="menu__link" href="#">Contact us</a>
-              <a class="menu__link" href="#">Privacy</a>
-              <a class="menu__link" href="#">Returns policy</a>
-            </nav>
-            <section class="subscribe" name="subscribe">
-              <p class="subscribe__heading">Join our mailing list</p>
-              <div class="subscribe__input-box">
-                <input
-                  class="subscribe__input-box__input"
-                  type="email"
-                  placeholder="your@email.com"
-                />
-                <button class="subscribe__input-box__button">Sign up</button>
-              </div>
-            </section>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <div class="footer-bottom__box">
-            <div class="footer-bottom__box__copyrights">
-              <p class="footer-bottom__box__copyrights__text">
-                &#169;&nbsp;Ihanaa LTD. All rights reserved
-              </p>
-            </div>
-            <div class="footer-bottom__box__socials">
-              <div class="socials-box">
-                <a class="socials-box__link" href="#"
-                  ><img src="../assets/icons/socials/linkedin.png" alt="in"
-                /></a>
-                <a class="socials-box__link" href="#"
-                  ><img src="../assets/icons/socials/facebook.png" alt="face"
-                /></a>
-                <a class="socials-box__link" href="#"
-                  ><img src="../assets/icons/socials/instagram.png" alt="inst"
-                /></a>
-                <a class="socials-box__link" href="#"
-                  ><img src="../assets/icons/socials/skype.png" alt="skype"
-                /></a>
-                <a class="socials-box__link" href="#"
-                  ><img src="../assets/icons/socials/twitter.png" alt="twit"
-                /></a>
-                <a class="socials-box__link" href="#"
-                  ><img src="../assets/icons/socials/pinterest.png" alt="pint"
-                /></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div> -->
   </body>
 </html>

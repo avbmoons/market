@@ -14,13 +14,18 @@ body {
 header {
   margin: 0 auto;
   width: 100%;
-  height: 132px;
+  height: 15vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
   justify-content: space-between;
   background-color: #fff;
+}
+@media only screen and (max-width: 767px) {
+  header {
+    height: 7.5vh;
+  }
 }
 header .header-block {
   margin: 0 auto;
@@ -31,6 +36,11 @@ header .header-block {
   justify-content: center;
   box-sizing: border-box;
   border-bottom: 1px solid #ebe8f4;
+}
+@media only screen and (max-width: 767px) {
+  header .header-block {
+    height: 100%;
+  }
 }
 header .header-block__box {
   margin: 0 auto;
@@ -57,7 +67,12 @@ header .header-block__box__search .menu {
   box-sizing: border-box;
   position: relative;
 }
-header .header-block__box__search .menu__burger {
+@media only screen and (min-width: 768px) {
+  header .header-block__box__search .menu {
+    display: none;
+  }
+}
+header .header-block__box__search .menu .menu-icon {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,41 +86,118 @@ header .header-block__box__search .menu__burger {
   color: #22202e;
   cursor: pointer;
 }
-header .header-block__box__search .menu__content {
+header .header-block__box__search .menu .button-open {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+header .header-block__box__search .menu .button-open img {
+  margin: 0 auto;
+}
+header .header-block__box__search .menu .menu-content {
   margin: 0;
   margin-top: 5px;
-  width: 200px;
+  width: 90vw;
   position: absolute;
   left: -5px;
-  top: 20px;
+  top: 2.25vh;
+  float: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
   display: none;
   border: none;
+  background-color: rgba(34, 32, 46, 0.9);
+  z-index: 99;
 }
-header .header-block__box__search .menu__content__link {
-  margin-top: 10px;
-  text-decoration: none;
-  text-align: left;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 14px;
-  letter-spacing: 0%;
-  color: #2a254b;
+header .header-block__box__search .menu .menu-content .menu-close {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-end;
 }
-header .header-block__box__search .menu__content .last {
-  margin-bottom: 20px;
-}
-header .header-block__box__search .menu__content__link:hover {
+header .header-block__box__search .menu .menu-content .menu-close .button-close {
+  padding: 10px 10px 10px 0;
+  font-size: 16px;
   font-weight: 400;
-  color: #726e8d;
+  line-height: 16px;
+  letter-spacing: 0%;
+  color: #eb9a21;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
-header .header-block__box__search .menu__burger:hover header .header-block__box__search .menu__content {
+header .header-block__box__search .menu .menu-content .search-mini-box {
+  padding-left: 10px;
+  width: 90%;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+header .header-block__box__search .menu .menu-content .search-mini-box .search-input {
+  margin: 0;
+  width: 90%;
+  height: 100%;
+  border: none;
+  outline: #ebe8f4;
+}
+header .header-block__box__search .menu .menu-content .search-mini-box .search-input:focus {
+  border: 1px solid #726e8d;
+  background-color: #ebe8f4;
+  outline: #726e8d;
   display: block;
 }
-header .header-block__box__search .menu:hover .menu__content {
+header .header-block__box__search .menu .menu-content .search-mini-box .search-button {
+  margin: 0;
+  width: 10%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+header .header-block__box__search .menu .menu-content .search-mini-box .search-button img {
+  margin: 0 auto;
+}
+header .header-block__box__search .menu .menu-content .menu-item {
+  margin-top: 10px;
+  padding-left: 10px;
+  text-decoration: none;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 16px;
+  letter-spacing: 0%;
+  color: #fff;
+}
+header .header-block__box__search .menu .menu-content .last {
+  margin-bottom: 20px;
+}
+header .header-block__box__search .menu .menu-content .menu-item:hover {
+  font-weight: 400;
+  color: #eb9a21;
+}
+header .header-block__box__search .menu:hover .menu-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  display: flex;
+}
+header .header-block__box__search .menu:active .menu-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -120,6 +212,11 @@ header .header-block__box__search .search-box {
   box-sizing: border-box;
   justify-content: space-between;
   position: relative;
+}
+@media only screen and (max-width: 767px) {
+  header .header-block__box__search .search-box {
+    display: none;
+  }
 }
 header .header-block__box__search .search-box__link {
   display: flex;
@@ -218,9 +315,19 @@ header .header-block__box__services .cart-btn .cart-num {
   font-weight: 500;
   line-height: 14px;
   letter-spacing: 0%;
-  top: 10px;
+  top: 2px;
 }
-header nav {
+@media only screen and (max-width: 767px) {
+  header .header-block__box__services .cart-btn .cart-num {
+    width: 14px;
+    height: 14px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0%;
+  }
+}
+header .categories-box {
   margin: 0 auto;
   width: 100%;
   height: 48%;
@@ -229,7 +336,12 @@ header nav {
   justify-content: center;
   box-sizing: border-box;
 }
-header nav .categories {
+@media only screen and (max-width: 767px) {
+  header .categories-box {
+    display: none;
+  }
+}
+header .categories-box .categories {
   margin: 0 auto;
   width: 100%;
   height: 30%;
@@ -237,7 +349,7 @@ header nav .categories {
   justify-content: center;
   box-sizing: border-box;
 }
-header nav .categories__link {
+header .categories-box .categories__link {
   margin-left: 20px;
   display: flex;
   flex-direction: column;
@@ -252,11 +364,11 @@ header nav .categories__link {
   color: #22202e;
   cursor: pointer;
 }
-header nav .categories__link:hover {
+header .categories-box .categories__link:hover {
   color: #726e8d;
   font-weight: 400;
 }
-header nav .categories .first {
+header .categories-box .categories .first {
   margin-left: 0;
   color: #4e4d93;
 }/*# sourceMappingURL=header.css.map */

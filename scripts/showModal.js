@@ -39,7 +39,7 @@ function showModal(eventObj) {
     imageDomElement.src.replace("../", "");
   }
 
-  console.log(imageDomElement.naturalWidth);
+  //console.log(imageDomElement.naturalWidth);
 
   appDiv.appendChild(imageDomElement);
 
@@ -89,17 +89,34 @@ function showModal(eventObj) {
     priceOriginDomElement.style.textDecoration = "line-through";
   }
 
-  //  chqck image width
+  //  check screen ratio
+  const mediaQuery = window.matchMedia("(max-width:1023px)");
+
+  function handleTabletChange(e) {
+    if (e.matches) {
+      modalBlock.style.width = "90%";
+      modalBlock.style.height = "auto";
+      modalProduct.style.flexDirection = "column";
+    } else {
+      modalBlock.style.width = "55%";
+      modalBlock.style.height = "60%";
+    }
+  }
+  mediaQuery.addEventListener("change", handleTabletChange);
+
+  //  check image width
   if (imageDomElement.naturalWidth > 310) {
-    modalBlock.style.width = "50%";
+    //modalBlock.style.width = "50%";
     modalBlock.style.height = "auto"; // "80%";
     modalProduct.style.flexDirection = "column";
+    handleTabletChange(mediaQuery);
     appDiv.style.width = "100%";
     appDiv.style.height = "auto";
   } else {
-    modalBlock.style.width = "50%";
+    //modalBlock.style.width = "50%";
     modalBlock.style.height = "60%";
     modalProduct.style.flexDirection = "row";
+    handleTabletChange(mediaQuery);
     appDiv.style.width = "auto";
     appDiv.style.height = "100%";
   }

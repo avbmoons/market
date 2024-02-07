@@ -12,10 +12,16 @@ body {
 }
 
 .item-box {
-  margin-right: 20px;
+  margin-right: 10px;
   margin-bottom: 20px;
-  min-width: 25%;
-  max-width: 50%;
+  min-width: 23%;
+  max-width: 48%;
+  @media only screen and (max-width: 767px) {
+    margin-right: 5px;
+    margin-bottom: 10px;
+    max-width: 48%;
+    width: 48%;
+  }
   height: 100%;
   @include flex-vertical();
   justify-content: flex-start;
@@ -30,13 +36,12 @@ body {
     text-align: left;
     @include text-font(16px, 400, 16px, 0%);
     color: $color-primary-dark;
+    cursor: pointer;
   }
   &__bottom-box {
     margin-top: 20px;
-    //margin-bottom: 10px;
     @include flex-vertical();
     justify-content: center;
-    //border: 1px solid green;
     .stores {
       @include flex-horizontal();
       justify-content: space-between;

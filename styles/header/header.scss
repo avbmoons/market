@@ -11,10 +11,13 @@ body {
   font-family: Roboto;
 }
 
-header {
+@mixin header {
   margin: 0 auto;
   width: 100%;
   height: $header-height;
+  @media only screen and (max-width: 767px) {
+    height: $header-height * 0.5;
+  }
   @include flex-vertical();
   justify-content: space-between;
   background-color: $color-white;
@@ -22,6 +25,9 @@ header {
     margin: 0 auto;
     width: 100%;
     height: 50%;
+    @media only screen and (max-width: 767px) {
+      height: 100%;
+    }
     @include flex-vertical();
     border-bottom: 1px solid $color-grey-light;
     &__box {
@@ -39,7 +45,10 @@ header {
           margin-left: 20px;
           @include flex-vertical();
           position: relative;
-          &__burger {
+          @media only screen and (min-width: 768px) {
+            display: none;
+          }
+          .menu-icon {
             @include flex-vertical();
             text-align: right;
             text-decoration: none;
@@ -47,36 +56,98 @@ header {
             color: $color-grey-dark;
             cursor: pointer;
           }
-          &__content {
+          .button-open {
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            img {
+              margin: 0 auto;
+            }
+          }
+          .menu-content {
             margin: 0;
             margin-top: 5px;
-            width: 200px;
+            width: 90vw;
             position: absolute;
             left: -5px;
-            top: 20px;
+            top: $header-height * 0.15;
+            float: left;
             @include flex-vertical();
             display: none;
             border: none;
-            &__link {
+            background-color: rgba($color: $color-grey-dark, $alpha: 0.9);
+            z-index: 99;
+            .menu-close {
+              width: 100%;
+              @include flex-horizontal();
+              justify-content: flex-end;
+              .button-close {
+                padding: 10px 10px 10px 0;
+                @include text-font(16px, 400, 16px, 0%);
+                color: $color-orange;
+                background: none;
+                border: none;
+                outline: none;
+                cursor: pointer;
+              }
+            }
+            .search-mini-box {
+              padding-left: 10px;
+              width: 90%;
+              height: $input-height * 0.5;
+              @include flex-horizontal();
+              justify-content: flex-start;
+              .search-input {
+                margin: 0;
+                width: 90%;
+                height: 100%;
+                border: none;
+                outline: $color-grey-light;
+              }
+              .search-input:focus {
+                border: 1px solid $color-grey;
+                background-color: $color-grey-light;
+                outline: $color-grey;
+                display: block;
+              }
+              .search-button {
+                margin: 0;
+                width: 10%;
+                height: 100%;
+                @include flex-vertical();
+                @include flex-horizontal();
+                background-color: $color-white;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                img {
+                  margin: 0 auto;
+                }
+              }
+            }
+            .menu-item {
               margin-top: 10px;
+              padding-left: 10px;
               text-decoration: none;
               text-align: left;
-              @include text-font(14px, 300, 14px, 0%);
-              color: $color-primary-dark;
+              @include text-font(16px, 300, 16px, 0%);
+              color: $color-white;
             }
             .last {
               margin-bottom: 20px;
             }
-            &__link:hover {
+            .menu-item:hover {
               font-weight: 400;
-              color: $color-grey;
+              color: $color-orange;
             }
           }
-          &__burger:hover &__content {
-            display: block;
-          }
         }
-        .menu:hover .menu__content {
+        .menu:hover .menu-content {
+          @include flex-vertical();
+          display: flex;
+        }
+        .menu:active .menu-content {
           @include flex-vertical();
           display: inline-flex;
         }
@@ -86,6 +157,9 @@ header {
           @include flex-horizontal();
           justify-content: space-between;
           position: relative;
+          @media only screen and (max-width: 767px) {
+            display: none;
+          }
           &__link {
             @include flex-vertical();
             text-align: right;
@@ -159,17 +233,25 @@ header {
             align-items: center;
             color: $color-white;
             @include text-font(14px, 500, 14px, 0%);
-            top: 10px;
+            top: 2px;
+            @media only screen and (max-width: 767px) {
+              width: 14px;
+              height: 14px;
+              @include text-font(12px, 400, 12px, 0%);
+            }
           }
         }
       }
     }
   }
-  nav {
+  .categories-box {
     margin: 0 auto;
     width: 100%;
-    height: 48%; // 50%;
+    height: 48%;
     @include flex-vertical();
+    @media only screen and (max-width: 767px) {
+      display: none;
+    }
     .categories {
       margin: 0 auto;
       width: 100%;
@@ -194,4 +276,8 @@ header {
       }
     }
   }
+}
+
+header {
+  @include header();
 }

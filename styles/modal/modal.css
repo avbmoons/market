@@ -18,7 +18,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.43);
-  z-index: 10;
+  z-index: 999;
   display: none;
   justify-content: center;
   box-sizing: border-box;
@@ -110,6 +110,11 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: space-around;
+}
+@media only screen and (max-width: 767px) {
+  .modal__block__items .product__text-box {
+    width: 100%;
+  }
 }
 .modal__block__items .product__text-box__heading {
   margin: 0 auto;

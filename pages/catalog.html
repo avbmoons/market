@@ -9,6 +9,7 @@
     <script defer src="../scripts/catalogList.js"></script>
     <script defer src="../scripts/showModal.js"></script>
     <script defer src="../scripts/showCart.js"></script>
+    <script defer src="../scripts/menuClose.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -18,24 +19,45 @@
             <div class="header-block__box">
               <div class="header-block__box__search">
                 <div class="menu">
-                  <a class="menu__burger" href="#"
-                    ><img src="../assets/icons/burger.png" alt="burger"
-                  /></a>
-                  <div class="menu__content">
-                    <a class="menu__content__link" href="#">New arrivals</a>
-                    <a class="menu__content__link" href="#">Best sellers</a>
-                    <a class="menu__content__link" href="#">Recently viewed</a>
-                    <a class="menu__content__link" href="#"
-                      >Popular this week</a
-                    >
-                    <a class="menu__content__link last" href="#"
+                  <button class="button-open" onclick="menuOpen();">
+                    <img src="../assets/icons/burger16.png" alt="burger" />
+                  </button>
+                  <div class="menu-content">
+                    <div class="menu-close">
+                      <button class="button-close" onclick="menuClose();">
+                        &#10006;
+                      </button>
+                    </div>
+                    <div class="search-mini-box">
+                      <input
+                        class="search-input"
+                        type="text"
+                        placeholder="Search"
+                      />
+                      <button class="search-button">
+                        <img src="../assets/icons/search16.png" alt="search" />
+                      </button>
+                      <input
+                        class="search-box__input"
+                        type="text"
+                        placeholder="Search"
+                      />
+                    </div>
+                    <a class="menu-item" href="../pages/catalog.html"
                       >All products</a
                     >
+                    <a class="menu-item" href="#">Plant pots</a>
+                    <a class="menu-item" href="#">Ceramics</a>
+                    <a class="menu-item" href="#">Tables</a>
+                    <a class="menu-item" href="#">Chairs</a>
+                    <a class="menu-item" href="#">Crockery</a>
+                    <a class="menu-item" href="#">Tableware</a>
+                    <a class="menu-item last" href="#">Cutlery</a>
                   </div>
                 </div>
                 <div class="search-box">
                   <a class="search-box__link" href="#"
-                    ><img src="../assets/icons/search.png" alt="search"
+                    ><img src="../assets/icons/search16.png" alt="search"
                   /></a>
                   <input
                     class="search-box__input"
@@ -56,18 +78,21 @@
                   href="../pages/cart.html"
                   title="Cart"
                   target="_blank"
-                  ><img src="../assets/icons/cart.png" alt="cart" />
+                  ><img src="../assets/icons/cart16.png" alt="cart" />
                   <div class="cart-num" id="cartBtnNum">0</div></a
                 >
                 <a class="services-link" href="#"
-                  ><img src="../assets/icons/user.png" alt="user" />
+                  ><img src="../assets/icons/user16.png" alt="user" />
                 </a>
               </div>
             </div>
           </div>
-          <nav>
+          <div class="categories-box">
             <div class="categories">
-              <a class="categories__link first" href="#">Plant pots</a>
+              <a class="categories__link first" href="../pages/catalog.html"
+                >All products</a
+              >
+              <a class="categories__link" href="#">Plant pots</a>
               <a class="categories__link" href="#">Ceramics</a>
               <a class="categories__link" href="#">Tablets</a>
               <a class="categories__link" href="#">Chairs</a>
@@ -75,7 +100,7 @@
               <a class="categories__link" href="#">Tableware</a>
               <a class="categories__link" href="#">Cutlery</a>
             </div>
-          </nav>
+          </div>
         </header>
         <main>
           <section class="catalog-slide">

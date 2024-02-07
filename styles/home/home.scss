@@ -1,6 +1,8 @@
 @use "sass:math";
 
 @import "../vars/vars.scss";
+@import "../header/header.scss";
+@import "../footer/footer.scss";
 @import "../itemBox/itemBox.scss";
 @import "../modal/modal.scss";
 
@@ -27,190 +29,16 @@ body {
     justify-content: flex-start;
     flex-grow: 1;
     header {
-      margin: 0 auto;
-      width: 100%;
-      height: $header-height;
-      @include flex-vertical();
-      justify-content: space-between;
-      background-color: $color-white;
-      .header-block {
-        margin: 0 auto;
-        width: 100%;
-        height: 50%;
-        @include flex-vertical();
-        border-bottom: 1px solid $color-grey-light;
-        &__box {
-          margin: 0 auto;
-          width: 100%;
-          height: 40%;
-          @include flex-horizontal();
-          &__search {
-            margin: 0 auto;
-            width: 40%;
-            height: 100%;
-            @include flex-horizontal();
-            justify-content: flex-start;
-            .menu {
-              margin-left: 20px;
-              @include flex-vertical();
-              position: relative;
-              &__burger {
-                @include flex-vertical();
-                text-align: right;
-                text-decoration: none;
-                @include text-font(14px, 400, 14px, 0%);
-                color: $color-grey-dark;
-                cursor: pointer;
-              }
-              &__content {
-                margin: 0;
-                margin-top: 5px;
-                width: 200px;
-                position: absolute;
-                left: -5px;
-                top: 20px;
-                @include flex-vertical();
-                display: none;
-                border: none;
-                &__link {
-                  margin-top: 10px;
-                  text-decoration: none;
-                  text-align: left;
-                  @include text-font(14px, 300, 14px, 0%);
-                  color: $color-primary-dark;
-                }
-                .last {
-                  margin-bottom: 20px;
-                }
-                &__link:hover {
-                  font-weight: 400;
-                  color: $color-grey;
-                }
-              }
-              &__burger:hover &__content {
-                display: block;
-              }
-            }
-            .menu:hover .menu__content {
-              @include flex-vertical();
-              display: inline-flex;
-            }
-            .search-box {
-              margin-left: 20px;
-              width: 80%;
-              @include flex-horizontal();
-              justify-content: space-between;
-              position: relative;
-              &__link {
-                @include flex-vertical();
-                text-align: right;
-                text-decoration: none;
-                @include text-font(14px, 400, 14px, 0%);
-                color: $color-grey-dark;
-                cursor: pointer;
-              }
-              &__input {
-                margin: 0 auto;
-                margin-left: 20px;
-                padding-left: 10px;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 90%;
-                height: 100%;
-                outline: $color-grey-light;
-                display: none;
-              }
-              &__input:focus {
-                border: 1px solid $color-grey;
-                background-color: $color-grey-light;
-                outline: $color-grey;
-                display: block;
-              }
-            }
-            .search-box:hover .search-box__input {
-              display: inline-flex;
-            }
-          }
-          &__logo {
-            margin: 0 auto;
-            width: 20%;
-            height: 100%;
-            @include flex-vertical();
-            cursor: pointer;
-            &__image {
-              margin: 0 auto;
-              height: auto;
-            }
-          }
-          &__services {
-            margin: auto;
-            width: 40%;
-            height: 100%;
-            @include flex-horizontal();
-            justify-content: flex-end;
-            .services-link {
-              margin-right: 20px;
-              @include flex-vertical();
-              text-align: right;
-              text-decoration: none;
-              @include text-font(14px, 400, 14px, 0%);
-              color: $color-grey-dark;
-              cursor: pointer;
-            }
-            .cart-btn {
-              margin-right: 20px;
-              height: auto;
-              @include flex-horizontal();
-              align-items: center;
-              cursor: pointer;
-              .cart-num {
-                position: absolute;
-                background-color: $color-orange;
-                width: 16px;
-                height: 16px;
-                border-radius: 50%;
-                @include flex-horizontal();
-                align-items: center;
-                color: $color-white;
-                @include text-font(14px, 500, 14px, 0%);
-                top: 10px;
-              }
-            }
-          }
-        }
-      }
-      nav {
-        margin: 0 auto;
-        width: 100%;
-        height: 48%; // 50%;
-        @include flex-vertical();
-        .categories {
-          margin: 0 auto;
-          width: 100%;
-          height: 30%;
-          @include flex-horizontal();
-          &__link {
-            margin-left: 20px;
-            @include flex-vertical();
-            text-decoration: none;
-            text-align: center;
-            @include text-font(16px, 300, 16px, 0%);
-            color: $color-grey-dark;
-            cursor: pointer;
-          }
-          &__link:hover {
-            color: $color-grey;
-            font-weight: 400;
-          }
-          .first {
-            margin-left: 0;
-          }
-        }
-      }
+      position: fixed;
+      top: 0;
+      @include header();
     }
     main {
       margin: 0 auto;
+      margin-top: $header-height;
+      @media only screen and (max-width: 767px) {
+        margin-top: $header-height * 0.5;
+      }
       width: $site-width;
       min-height: $section-height;
       @include flex-vertical();
@@ -218,12 +46,18 @@ body {
       background-color: $color-white;
       .hero {
         margin: 0 auto;
-        margin-top: 40px;
         width: $block-width;
-        //min-height: $block-height;
         height: $block-height;
+        @media only screen and (max-width: 1023px) {
+          margin-bottom: 20px;
+          width: $site-width;
+          height: 40vh;
+        }
         @include flex-horizontal();
         justify-content: space-between;
+        @media only screen and (max-width: 1023px) {
+          @include flex-vertical();
+        }
         background-color: $color-grey-dark;
         &__block {
           min-width: 50%;
@@ -242,6 +76,11 @@ body {
               width: 60%;
               @include text-font(22px, 300, 30px, 0%);
               color: $color-white;
+              @media only screen and (max-width: 376px) {
+                margin-bottom: 0;
+                width: 80%;
+                @include text-font(18px, 400, 22px, 0%);
+              }
             }
             &__button {
               margin: 0;
@@ -254,6 +93,10 @@ body {
               background-color: $color-primary;
               border: none;
               cursor: pointer;
+              @media only screen and (max-width: 376px) {
+                margin-top: 20px;
+                width: 50%;
+              }
             }
             &__button:hover {
               background-color: $color-grey-middle;
@@ -275,15 +118,21 @@ body {
               width: 60%;
               @include text-font(16px, 300, 24px, 0%);
               color: $color-white;
+              @media only screen and (max-width: 376px) {
+                width: 80%;
+                @include text-font(16px, 300, 20px, 0%);
+              }
             }
           }
         }
         &__slide {
           max-width: 50%;
           height: 100%;
-          //height: $block-height;
           @include flex-horizontal();
           justify-content: flex-end;
+          @media only screen and (max-width: 1023px) {
+            display: none;
+          }
           .slide-img {
             margin: 0 auto;
             height: 100%;
@@ -292,7 +141,6 @@ body {
       }
       .features {
         margin: 0 auto;
-        margin-top: 40px;
         width: $block-width;
         min-height: $section-info-height;
         @include flex-horizontal();
@@ -302,14 +150,15 @@ body {
           @include flex-vertical();
           &__heading {
             margin: 0 auto;
+            @media only screen and (max-width: 1023px) {
+              margin-bottom: 20px;
+            }
             width: 100%;
             height: 35%;
             @include flex-vertical();
             &__content {
               margin: 0 auto;
-              //margin-left: 40px;
-              //margin-bottom: 20px;
-              width: 100%; // 60%;
+              width: 100%;
               @include text-font(18px, 400, 18px, 0%);
               color: $color-primary-dark;
               text-align: center;
@@ -321,8 +170,18 @@ body {
             height: 65%;
             @include flex-horizontal();
             justify-content: space-between;
+            @media only screen and (max-width: 767px) {
+              height: auto;
+              @include flex-vertical();
+            }
             .feature-box {
               width: 23%;
+              @media only screen and (max-width: 767px) {
+                margin-bottom: 20px;
+                padding: 10px;
+                width: 100%;
+                border: 1px solid $color-grey-middle;
+              }
               height: 100%;
               @include flex-vertical();
               justify-content: flex-start;
@@ -345,11 +204,14 @@ body {
       }
       .arrivals {
         margin: 0 auto;
-        margin-top: 40px;
         width: $block-width;
         min-height: $section-height * $coeff;
         @include flex-horizontal();
         justify-content: space-between;
+        @media only screen and (min-width: 768px) and (max-width: 1023px) {
+          min-height: auto;
+          height: auto;
+        }
         &__block {
           width: 100%;
           height: fit-content;
@@ -358,6 +220,9 @@ body {
             margin: 0 auto;
             margin-top: 40px;
             margin-bottom: 20px;
+            @media only screen and (max-width: 1023px) {
+              margin-top: 0;
+            }
             width: 100%;
             height: fit-content;
             @include flex-vertical();
@@ -368,15 +233,25 @@ body {
               @include text-font(18px, 400, 18px, 0%);
               color: $color-primary-dark;
               text-align: left;
+              @media only screen and (max-width: 767px) {
+                text-align: center;
+              }
             }
           }
           &__items {
             margin: 0 auto;
             margin-bottom: 40px;
+            @media only screen and (max-width: 1023px) {
+              margin-bottom: 20px;
+            }
             width: 100%;
             height: fit-content;
             @include flex-horizontal();
             justify-content: space-between;
+            @media only screen and (max-width: 767px) {
+              flex-wrap: wrap;
+            }
+
             .first {
               margin-left: 0;
             }
@@ -385,11 +260,14 @@ body {
       }
       .popular {
         margin: 0 auto;
-        margin-top: 40px;
         width: $block-width;
         min-height: $section-height * $coeff;
         @include flex-horizontal();
         justify-content: space-between;
+        @media only screen and (min-width: 768px) and (max-width: 1023px) {
+          min-height: auto;
+          height: auto;
+        }
         &__block {
           width: 100%;
           height: fit-content;
@@ -398,6 +276,9 @@ body {
             margin: 0 auto;
             margin-top: 40px;
             margin-bottom: 20px;
+            @media only screen and (max-width: 1023px) {
+              margin-top: 0;
+            }
             width: 100%;
             height: fit-content;
             @include flex-vertical();
@@ -408,6 +289,9 @@ body {
               @include text-font(18px, 400, 18px, 0%);
               color: $color-primary-dark;
               text-align: left;
+              @media only screen and (max-width: 767px) {
+                text-align: center;
+              }
             }
           }
           &__items {
@@ -417,7 +301,10 @@ body {
             height: fit-content;
             @include flex-horizontal();
             justify-content: space-between;
-            //flex-wrap: wrap;
+            @media only screen and (max-width: 767px) {
+              margin-bottom: 0;
+              flex-wrap: wrap;
+            }
             .first {
               margin-left: 0;
             }
@@ -426,11 +313,13 @@ body {
       }
       .feedback {
         margin: 0 auto;
-        margin-top: 40px;
-        margin-bottom: 40px;
         width: $block-width;
-        min-height: $section-info-height; // $block-height * $coeff;
+        min-height: $section-info-height;
         @include flex-vertical();
+        @media only screen and (min-width: 768px) and (max-width: 1023px) {
+          min-height: auto;
+          height: auto;
+        }
         &__heading {
           margin: 0 auto;
           width: 100%;
@@ -443,6 +332,9 @@ body {
           margin: 0 auto;
           margin-top: 20px;
           width: 50%;
+          @media only screen and (max-width: 767px) {
+            width: 100%;
+          }
           height: fit-content;
           @include text-font(16px, 400, 16px, 0%);
           color: $color-primary-dark;
@@ -452,6 +344,9 @@ body {
           margin: 0 auto;
           margin-top: 20px;
           width: 50%;
+          @media only screen and (max-width: 767px) {
+            width: 100%;
+          }
           height: fit-content;
           .subscribe {
             margin-bottom: 20px;
@@ -466,6 +361,9 @@ body {
               @include flex-horizontal();
               &__input {
                 width: 80%;
+                @media only screen and (max-width: 767px) {
+                  width: 65%;
+                }
                 padding-left: 10px;
                 @include text-font(16px, 300, 16px, 5%);
                 color: $color-grey-light;
@@ -480,6 +378,9 @@ body {
               }
               &__button {
                 width: 20%;
+                @media only screen and (max-width: 767px) {
+                  width: 35%;
+                }
                 @include text-font(16px, 300, 16px, 5%);
                 color: $color-white;
                 background-color: $color-primary-dark;
@@ -499,127 +400,6 @@ body {
     }
   }
   footer {
-    margin: 0 auto;
-    width: 100%;
-    height: $footer-height;
-    @include flex-vertical();
-    background-color: $color-primary-dark;
-    .footer-block {
-      margin: 0 auto;
-      width: 100%;
-      height: 80%;
-      @include flex-vertical();
-      border-bottom: 1px solid $color-grey;
-      &__box {
-        margin: 0 auto;
-        width: $block-width;
-        height: 70%;
-        @include flex-horizontal();
-        .menu {
-          margin: 0 auto;
-          width: 20%;
-          height: 100%;
-          @include flex-vertical();
-          justify-content: flex-start;
-          &__heading {
-            @include text-font(16px, 300, 16px, 5%);
-            color: $color-white;
-          }
-          &__link {
-            margin-top: 10px;
-            text-align: left;
-            text-decoration: none;
-            @include text-font(14px, 300, 14px, 0%);
-            color: $color-white;
-          }
-        }
-        .subscribe {
-          width: 40%;
-          height: 100%;
-          @include flex-vertical();
-          justify-content: flex-start;
-          &__heading {
-            @include text-font(16px, 300, 16px, 5%);
-            color: $color-white;
-          }
-          &__input-box {
-            margin-top: 10px;
-            width: 100%;
-            height: $input-height;
-            @include flex-horizontal();
-            &__input {
-              width: 80%;
-              padding-left: 10px;
-              @include text-font(16px, 300, 16px, 5%);
-              color: $color-grey-light;
-              background-color: $color-primary;
-              border: $color-primary-dark;
-            }
-            &__input:focus {
-              border: none;
-              outline: $color-primary-dark;
-              color: $color-primary-dark;
-              background-color: $color-grey-light;
-            }
-            &__button {
-              width: 20%;
-              @include text-font(16px, 300, 16px, 5%);
-              color: $color-primary-dark;
-              background-color: $color-white;
-              border: 1px solid $color-primary-dark;
-              cursor: pointer;
-            }
-            &__button:hover {
-              background-color: $color-grey-middle;
-            }
-            &__button:focus {
-              background-color: $color-grey-middle;
-            }
-          }
-        }
-      }
-    }
-    .footer-bottom {
-      margin: 0 auto;
-      width: 100%;
-      height: 20%;
-      @include flex-vertical();
-      &__box {
-        margin: 0 auto;
-        width: $block-width;
-        height: 40%;
-        @include flex-horizontal();
-        justify-content: space-between;
-        &__copyrights {
-          @include flex-vertical();
-          &__text {
-            margin: 0 auto;
-            @include text-font(14px, 300, 14px, 0%);
-            color: $color-white;
-          }
-        }
-        &__socials {
-          @include flex-vertical();
-          .socials-box {
-            margin: 0 auto;
-            @include flex-horizontal();
-            &__link {
-              margin: 0 auto;
-              margin-left: 10px;
-              @include flex-vertical();
-              img {
-                margin: 0 auto;
-              }
-              img:hover {
-                background-color: $color-grey;
-              }
-            }
-            &__link:active {
-              background-color: $color-grey;
-            }
-          }
-        }
-      }
-    }
+    @include footer();
   }
 }

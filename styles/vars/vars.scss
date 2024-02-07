@@ -6,7 +6,7 @@ $site-maket-width: 1440px;
 $site-maket-height: 4160px;
 
 $header-width: 100%;
-$header-height: 132px;
+$header-height: 15vh; // 10vh; // 132px;
 
 $footer-width: 100%;
 $footer-height: 380px;
@@ -16,7 +16,7 @@ $section-height: 704px;
 $section-info-height: 355px;
 
 $block-maket-width: 1280px;
-$block-height: 70vh; // 450px; // 584px;
+$block-height: 90vh; // 70vh; // 450px; // 584px;
 $block-width: math.div($block-maket-width, $site-maket-width) * $site-width;
 
 $catalog-slide-height: 209px;
