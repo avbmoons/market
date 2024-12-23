@@ -1,10 +1,10 @@
-@use "sass:math";
+@use 'sass:math';
 
-@import "../vars/vars.scss";
-@import "../header/header.scss";
-@import "../footer/footer.scss";
-@import "../itemBox/itemBox.scss";
-@import "../modal/modal.scss";
+@import '../vars/vars.scss';
+@import '../header/header.scss';
+@import '../footer/footer.scss';
+@import '../itemBox/itemBox.scss';
+@import '../modal/modal.scss';
 
 * {
   margin: 0;
@@ -68,6 +68,7 @@ body {
           img {
             margin: 0 auto;
             width: 100%;
+            object-fit: cover;
           }
         }
         &__block {
@@ -80,24 +81,40 @@ body {
             margin: 0 auto;
             margin-top: 10px;
             width: 100%;
-            height: 50%;
+            height: 30%; // 50%;
             @include flex-vertical();
             &__content {
               margin: 0;
               margin-left: 40px;
               margin-bottom: 20px;
-              width: 60%;
+              width: 70%;
               @include text-font(22px, 300, 30px, 0%);
               color: $color-primary-dark; // $color-white;
               @media only screen and (max-width: 767px) {
                 margin-left: 0;
               }
             }
+            &__pricebox {
+              margin: 0;
+              margin-left: 40px;
+              margin-bottom: 20px;
+              width: 60%;
+              @include flex-horizontal();
+              justify-content: flex-start;
+              @media only screen and (max-width: 767px) {
+                margin-left: 0;
+              }
+              &__price {
+                margin-right: 20px;
+                @include text-font(22px, 300, 30px, 0%);
+                color: $color-primary-dark; // $color-white;
+              }
+            }
           }
           &__text {
             margin: 0 auto;
             width: 100%;
-            height: 50%;
+            height: 60%; // 50%;
             @media only screen and (max-width: 767px) {
               height: auto;
             }

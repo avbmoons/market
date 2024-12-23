@@ -36,7 +36,7 @@ class CatalogItem {
         src="${this.image}"
         id="item-${this.id}"
         alt="photo" title="${this.name}"/>
-      <a class="item-box__heading" href="product.html">${this.name}</a>
+      <a class="item-box__heading" href="./product.html?id=" id="product${this.id}">${this.name}</a>
       <div class="item-box__bottom-box">
         <div class="stores">
           <p class="price">${this.priceActive}&nbsp;${this.currency}</p>
@@ -55,7 +55,7 @@ class CatalogList {
     this.ccatalog = catalog;
   }
   render() {
-    let listHtml = "";
+    let listHtml = '';
     this.ccatalog.forEach((ccatalog) => {
       const catalogItem = new CatalogItem(
         ccatalog.id,
@@ -75,7 +75,7 @@ class CatalogList {
       );
       listHtml += catalogItem.render();
     });
-    document.querySelector(".catalog__block__items").innerHTML = listHtml;
+    document.querySelector('.catalog__block__items').innerHTML = listHtml;
   }
 }
 

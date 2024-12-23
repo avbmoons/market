@@ -36,7 +36,7 @@ class CatalogItem {
         src="${this.image}"
         id="item-${this.id}"
         alt="photo" title="${this.name}"/>
-      <a class="item-box__heading" href="product.html">${this.name}</a>
+      <a class="item-box__heading" href="product.html?id=" id="product${this.id}" target='_blank'>${this.name}</a>
       <div class="item-box__bottom-box">
         <div class="stores">
             <p class="price">${this.priceActive}&nbsp;${this.currency}</p>
@@ -52,10 +52,10 @@ class SuggestList {
     this.ccatalog = [];
   }
   fetchSuggest() {
-    this.ccatalog = catalog.filter((catalog) => catalog.isPopular == "true");
+    this.ccatalog = catalog.filter((catalog) => catalog.isPopular == 'true');
   }
   render() {
-    let listHtml = "";
+    let listHtml = '';
     this.ccatalog.forEach((ccatalog) => {
       const catalogItem = new CatalogItem(
         ccatalog.id,
@@ -75,7 +75,7 @@ class SuggestList {
       );
       listHtml += catalogItem.render();
     });
-    document.querySelector(".suggest__block__items").innerHTML = listHtml;
+    document.querySelector('.suggest__block__items').innerHTML = listHtml;
   }
 }
 

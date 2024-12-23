@@ -36,7 +36,7 @@ class CatalogItem {
         src="${this.image}"
         id="item-${this.id}"
         alt="photo" title="${this.name}"/>
-      <a class="item-box__heading" href="pages/product.html">${this.name}</a>
+      <a class="item-box__heading" href="pages/product.html?id=" id="product${this.id}">${this.name}</a>
       <div class="item-box__bottom-box">
         <div class="stores">
             <p class="price">${this.priceActive}&nbsp;${this.currency}</p>
@@ -52,15 +52,15 @@ class PopularList {
     this.ccatalog = [];
   }
   fetchPopular() {
-    this.ccatalog = catalog.filter((catalog) => catalog.isPopular == "true");
+    this.ccatalog = catalog.filter((catalog) => catalog.isPopular == 'true');
   }
   render() {
-    let listHtml = "";
+    let listHtml = '';
     this.ccatalog.forEach((ccatalog) => {
       const catalogItem = new CatalogItem(
         ccatalog.id,
         ccatalog.name,
-        ccatalog.image.replace("../", ""),
+        ccatalog.image.replace('../', ''),
         ccatalog.weight,
         ccatalog.units,
         ccatalog.resume,
@@ -75,7 +75,7 @@ class PopularList {
       );
       listHtml += catalogItem.render();
     });
-    document.querySelector(".popular__block__items").innerHTML = listHtml;
+    document.querySelector('.popular__block__items').innerHTML = listHtml;
   }
 }
 
@@ -84,15 +84,15 @@ class ArrivalsList {
     this.ccatalog = [];
   }
   fetchArrivals() {
-    this.ccatalog = catalog.filter((catalog) => catalog.isNew == "true");
+    this.ccatalog = catalog.filter((catalog) => catalog.isNew == 'true');
   }
   render() {
-    let listHtml = "";
+    let listHtml = '';
     this.ccatalog.forEach((ccatalog) => {
       const catalogItem = new CatalogItem(
         ccatalog.id,
         ccatalog.name,
-        ccatalog.image.replace("../", ""),
+        ccatalog.image.replace('../', ''),
         ccatalog.weight,
         ccatalog.units,
         ccatalog.resume,
@@ -107,7 +107,7 @@ class ArrivalsList {
       );
       listHtml += catalogItem.render();
     });
-    document.querySelector(".arrivals__block__items").innerHTML = listHtml;
+    document.querySelector('.arrivals__block__items').innerHTML = listHtml;
   }
 }
 

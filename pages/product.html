@@ -6,7 +6,9 @@
     <title>Product</title>
     <link rel="stylesheet" href="../styles/product/product.css" />
     <script defer src="../data/catalog.js"></script>
+    <script defer src="../scripts/showProduct.js"></script>
     <script defer src="../scripts/suggestList.js"></script>
+    <script defer src="../scripts/productUrl.js"></script>
     <script defer src="../scripts/showCart.js"></script>
     <script src="../scripts/toCart.js"></script>
     <script defer src="../scripts/menuClose.js"></script>
@@ -107,20 +109,40 @@
             <div class="product__slide">
               <img
                 class="slide-img"
+                id="productImage"
                 src="../assets/catalog/item-10.png"
                 alt="photo"
               />
             </div>
             <div class="product__block">
               <div class="product__block__heading">
-                <p class="product__block__heading__content">
+                <p class="product__block__heading__content" id="productName">
                   The Grey Ceramics
                 </p>
-                <p class="product__block__heading__content">&euro;&nbsp;120</p>
+                <div class="product__block__heading__pricebox">
+                  <p
+                    class="product__block__heading__pricebox__price"
+                    id="productCurrency"
+                  >
+                    &euro;
+                  </p>
+                  <p
+                    class="product__block__heading__pricebox__price"
+                    id="productPrice"
+                  >
+                    120
+                  </p>
+                </div>
+                <!-- <p class="product__block__heading__content" id="productPrice">
+                  &euro;&nbsp;120
+                </p> -->
               </div>
               <div class="product__block__text">
                 <p class="product__block__text__heading">Description</p>
-                <p class="product__block__text__content">
+                <p
+                  class="product__block__text__content"
+                  id="productDescription"
+                >
                   A new era in eco friendly furniture with Avelon, the French
                   luxury retail brand with nice fonts, tasteful colors and a
                   beautiful way to display things digitally using modern web
